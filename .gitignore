@@ -1,0 +1,39 @@
+# --- Laravel Core ---
+/vendor/
+.env
+.env.backup
+.env.production
+# composer.lock
+# Nota: Algunos desarrolladores prefieren subir composer.lock en proyectos Laravel. 
+# Si trabajas en equipo, puedes borrar la línea de arriba para asegurar las mismas versiones de PHP.
+
+# --- Carpetas de Almacenamiento y Logs ---
+/storage/*.key
+/storage/framework/cache/data/*
+/storage/framework/sessions/*
+/storage/framework/testing/*
+/storage/framework/views/*
+/storage/logs/*
+
+# --- Frontend (Vue 3, Vite, Inertia) ---
+/node_modules/
+/public/build/
+/public/hot/
+/public/storage
+.pnpm-debug.log*
+yarn-error.log*
+npm-debug.log*
+
+# --- Entorno de Desarrollo y Herramientas ---
+/.phpunit.cache/
+/.herd/
+/.idea/
+/.vscode/
+.DS_Store
+Thumbs.db
+
+# --- Paquetes y Compilaciones de Testing ---
+/auth.json
+/.env.testing
+
+*.pdf

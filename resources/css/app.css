@@ -1,0 +1,22 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+    .news-balloon {
+        @apply relative flex h-56 w-56 items-center justify-center p-8 text-center text-sm font-semibold leading-snug shadow-xl sm:h-64 sm:w-64 sm:text-base;
+        border-radius: 50%;
+    }
+
+    .news-balloon-knot {
+        @apply h-0 w-0;
+        border-left: 10px solid transparent;
+        border-right: 10px solid transparent;
+        border-top-width: 14px;
+        border-top-style: solid;
+    }
+
+    .news-balloon-string {
+        @apply h-10 w-px bg-gray-400;
+    }
+}
