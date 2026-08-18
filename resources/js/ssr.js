@@ -3,8 +3,8 @@ import createServer from '@inertiajs/vue3/server';
 import { renderToString } from '@vue/server-renderer';
 import { resolvePageComponent } from 'laravel-vite-plugin/inertia-helpers';
 import { createSSRApp, h } from 'vue';
-import { ZiggyVue } from '../../vendor/tightenco/ziggy';
-
+//import { ZiggyVue } from '../../vendor/tightenco/ziggy';
+import { ZiggyVue } from 'ziggy-js'; // PRO
 const appName = import.meta.env.VITE_APP_NAME || 'Globos Sensacionales';
 
 createServer((page) =>
