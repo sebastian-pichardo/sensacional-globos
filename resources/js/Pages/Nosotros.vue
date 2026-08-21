@@ -30,7 +30,7 @@ const ogImage = computed(() => `${appUrl.value}/img/productos/fabrica.webp`);
             <meta property="og:image" :content="ogImage" />
         </Head>
 
-        <div class="pt-40 sm:pt-44">
+        <div class="pt-40 sm:pt-36">
             <AboutStory />
             <Locations />
             <GreenCommitment />

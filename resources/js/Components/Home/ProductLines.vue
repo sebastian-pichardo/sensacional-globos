@@ -76,8 +76,9 @@ const lines = [
                             class="mx-auto h-56 w-auto max-w-full object-contain"
                         />
                     </div>
+                    <!-- text-gray-900 -->
                     <div
-                        :class="[line.color, line.dark ? 'text-gray-900' : 'text-white']"
+                        :class="[line.color, line.dark ? 'text-white' : 'text-white']"
                         class="px-6 py-5 text-center"
                     >
                         <h3 class="text-2xl font-extrabold">{{ line.name }}</h3>

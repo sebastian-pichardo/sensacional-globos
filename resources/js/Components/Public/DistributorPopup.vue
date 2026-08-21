@@ -99,7 +99,7 @@ onMounted(() => {
                     Distribuidores autorizados
                 </p>
                 <h2 id="popup-distribuidor-titulo" class="mt-2 text-2xl font-bold text-gray-900">
-                    Conviértete en distribuidor autorizado y gana un 10% de descuento
+                    Conviértete en distribuidor autorizado y obten un descuento
                 </h2>
                 <p class="mt-3 text-sm text-gray-600">
                     Al registrarte ahora mismo. Suma nuestro catálogo a tu negocio y recibe

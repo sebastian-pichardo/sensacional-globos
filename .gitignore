@@ -37,3 +37,7 @@ Thumbs.db
 /.env.testing
 
 *.pdf
+
+*.zip
+
+/bootstrap/ssr/

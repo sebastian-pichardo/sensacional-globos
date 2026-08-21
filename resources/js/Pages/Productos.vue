@@ -33,7 +33,7 @@ const ogImage = computed(() => `${appUrl.value}/img/productos/globos-colores.web
             <meta property="og:image" :content="ogImage" />
         </Head>
 
-        <div class="pt-40 sm:pt-44">
+        <div class="pt-40 sm:pt-36">
             <ProductHero />
             <ProductGrid />
             <CustomBalloons />
