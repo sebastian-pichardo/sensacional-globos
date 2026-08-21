@@ -51,4 +51,9 @@ class HomeController extends Controller
     {
         return Inertia::render('Nosotros');
     }
+
+    public function productos(): Response
+    {
+        return Inertia::render('Productos');
+    }
 }

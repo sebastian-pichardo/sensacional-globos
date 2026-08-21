@@ -44,6 +44,7 @@ class HandleInertiaRequests extends Middleware
                 'shipping' => config('globos.shipping'),
                 'whatsapp' => $whatsapp,
                 'whatsappUrl' => 'https://wa.me/'.$whatsapp.'?text='.rawurlencode($message),
+                'catalogViewUrl' => config('globos.catalog_view_url'),
                 'social' => config('globos.social'),
                 'seoDescription' => config('globos.seo.description'),
             ],

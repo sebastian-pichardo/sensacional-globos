@@ -12,7 +12,7 @@ use Inertia\Inertia;
 Route::get('/', [HomeController::class, 'index'])->name('home');
 
 Route::get('/nosotros', [HomeController::class, 'nosotros'])->name('nosotros');
-Route::get('/productos', [HomeController::class, 'comingSoon'])->name('productos');
+Route::get('/productos', [HomeController::class, 'productos'])->name('productos');
 Route::get('/encuentra-un-distribuidor', [HomeController::class, 'comingSoon'])->name('encuentra-un-distribuidor');
 Route::get('/inspirate', [HomeController::class, 'comingSoon'])->name('inspirate');
 Route::get('/hazlo-tu-mismo', [HomeController::class, 'comingSoon'])->name('hazlo-tu-mismo');
