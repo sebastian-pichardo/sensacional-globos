@@ -14,12 +14,13 @@ class HomeController extends Controller
         if (! is_array($slides) || $slides === []) {
             $slides = [
                 [
-                    'image' => '/img/productos/slider1.webp',
+                    'image' => '/img/productos/globos-slider1.webp',
+                    'imageMobile' => '/img/productos/globos-movil-slider1.webp',
                     'name' => '',
                     'sku' => '',
                     'description' => '',
-                    'alt' => 'Catálogo de productos Sensacional 2026',
-                    'href' => '/catalogo/2026/Catalogo-Sensacional-2026.php',
+                    'alt' => 'Globos Sensacionales — colección 1',
+                    'href' => null,
                 ],
             ];
         }

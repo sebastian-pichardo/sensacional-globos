@@ -51,7 +51,9 @@ class HandleInertiaRequests extends Middleware
             'flash' => [
                 'success' => $request->session()->get('success'),
                 'catalog' => $request->session()->get('catalog'),
+                'catalog_error' => $request->session()->get('catalog_error'),
             ],
+            'csrf_token' => csrf_token(),
             'ziggy' => fn () => [
                 ...(new Ziggy)->toArray(),
                 'location' => $request->url(),

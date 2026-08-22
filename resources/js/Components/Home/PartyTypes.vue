@@ -5,6 +5,7 @@ const types = [
     {
         title: 'El artista',
         audience: 'Decoradores y artistas del globo',
+        image: '/img/productos/artista.png',
         text: 'Tiene creatividad al máximo, sabe lo que quiere y va por ello. Tú lo piensas y nuestros globos lo hacen realidad.',
         cta: 'Click aquí',
         route: 'inspirate',
@@ -14,6 +15,7 @@ const types = [
     {
         title: 'El empresario',
         audience: 'Distribuidores y mayoristas',
+        image: '/img/productos/empresario.png',
         text: 'Los números no son un lenguaje ajeno para ti: manejas las ganancias, los libros contables y las ventas al día, con mucha seguridad y pasión.',
         cta: 'Click aquí',
         route: 'encuentra-un-distribuidor',
@@ -23,6 +25,7 @@ const types = [
     {
         title: 'El 14 oficios',
         audience: 'Curiosos y creadores de tutoriales',
+        image: '/img/productos/distribuidor.png',
         text: 'Tú solito contra el mundo, curioso e investigador. Si tienes internet, tú puedes resolverlo todo. Hazlo tú mismo es tu categoría favorita.',
         cta: 'Click aquí',
         route: 'hazlo-tu-mismo',
@@ -57,6 +60,12 @@ const types = [
                     >
                         {{ type.audience }}
                     </span>
+                    <img
+                        v-if="type.image"
+                        :src="type.image"
+                        :alt="type.title"
+                        class="mt-4 h-40 w-full object-contain"
+                    />
                     <h3 class="mt-4 text-2xl font-extrabold text-gray-900">{{ type.title }}</h3>
                     <p class="mt-3 flex-1 text-sm leading-relaxed text-gray-600">{{ type.text }}</p>
                     <Link

@@ -27,7 +27,7 @@ const ogImage = computed(() => `${appUrl.value}/img/logo/globos-fiesta.webp`);
 const canonical = computed(() => `${appUrl.value}/`);
 
 const slideKey = computed(() =>
-    (props.slides ?? []).map((slide) => slide.image).join('|'),
+    (props.slides ?? []).map((slide) => `${slide.image}|${slide.imageMobile ?? ''}`).join('|'),
 );
 const jsonLd = computed(() =>
     JSON.stringify({

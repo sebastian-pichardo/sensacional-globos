@@ -16,8 +16,9 @@ return new class extends Migration
             $table->string('clave');
             $table->string('nombre');
             $table->string('abrev');
-            $table->tinyint('activo');
+            $table->integer('activo')->default(1);
             $table->string('clave_sat');
+            $table->timestamps();
         });
     }
 

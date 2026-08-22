@@ -2,9 +2,8 @@
 
 namespace Database\Seeders;
 
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
-use Illuminate\Database\Seeder;
 use App\Models\Distribuidor;
+use Illuminate\Database\Seeder;
 
 class DistribuidorSeeder extends Seeder
 {
@@ -28,7 +27,11 @@ class DistribuidorSeeder extends Seeder
                 'estado_clave' => 'PUE',
                 'codigo_postal' => '72000',
                 'email' => 'juan@example.com',
+                'telefono' => '2221234567',
+                'whatsapp' => '522221234567',
                 'activo' => 'si',
+                'latitude' => 19.048101,
+                'longitude' => -98.202423,
             ],
             [
                 'nombre' => 'Alexa',
@@ -44,7 +47,11 @@ class DistribuidorSeeder extends Seeder
                 'estado_clave' => 'MIC',
                 'codigo_postal' => '59600',
                 'email' => 'alexa@example.com',
+                'telefono' => '3511234567',
+                'whatsapp' => '523511234567',
                 'activo' => 'si',
+                'latitude' => 19.096373,
+                'longitude' => -101.521232,
             ],
             [
                 'nombre' => 'Carlos',
@@ -60,7 +67,11 @@ class DistribuidorSeeder extends Seeder
                 'estado_clave' => 'OAX',
                 'codigo_postal' => '68000',
                 'email' => 'carlos.martinez@example.com',
+                'telefono' => '9511234567',
+                'whatsapp' => '529511234567',
                 'activo' => 'si',
+                'latitude' => 17.056697,
+                'longitude' => -96.722873,
             ],
             [
                 'nombre' => 'María',
@@ -76,7 +87,11 @@ class DistribuidorSeeder extends Seeder
                 'estado_clave' => 'OAX',
                 'codigo_postal' => '68050',
                 'email' => 'maria.hernandez@example.com',
+                'telefono' => '9512345678',
+                'whatsapp' => '529512345678',
                 'activo' => 'si',
+                'latitude' => 17.065558,
+                'longitude' => -96.728486,
             ],
             [
                 'nombre' => 'José',
@@ -92,7 +107,11 @@ class DistribuidorSeeder extends Seeder
                 'estado_clave' => 'OAX',
                 'codigo_postal' => '68130',
                 'email' => 'jose.ramirez@example.com',
+                'telefono' => '9581234567',
+                'whatsapp' => '529581234567',
                 'activo' => 'si',
+                'latitude' => 15.831406,
+                'longitude' => -96.319770,
             ],
             [
                 'nombre' => 'Ana',
@@ -108,7 +127,11 @@ class DistribuidorSeeder extends Seeder
                 'estado_clave' => 'OAX',
                 'codigo_postal' => '68130',
                 'email' => 'ana.gomez@example.com',
+                'telefono' => '9582345678',
+                'whatsapp' => null,
                 'activo' => 'si',
+                'latitude' => 15.767579,
+                'longitude' => -96.257523,
             ],
             [
                 'nombre' => 'Luis',
@@ -124,7 +147,11 @@ class DistribuidorSeeder extends Seeder
                 'estado_clave' => 'OAX',
                 'codigo_postal' => '68039',
                 'email' => 'luis.cruz@example.com',
+                'telefono' => null,
+                'whatsapp' => '529583456789',
                 'activo' => 'si',
+                'latitude' => 15.765667,
+                'longitude' => -96.259896,
             ],
         ];
 

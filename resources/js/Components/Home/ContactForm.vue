@@ -7,6 +7,15 @@ defineProps({
         type: Array,
         required: true,
     },
+    title: {
+        type: String,
+        default: '¡Queremos saber de ti!',
+    },
+    description: {
+        type: String,
+        default:
+            'Escríbenos y con gusto nos pondremos en contacto para vivir juntos una fiesta sensacional. Ideal si buscas mayoreo, distribución o conocer nuestra fábrica. Envíos a todo México.',
+    },
 });
 
 const form = useForm({
@@ -30,12 +39,10 @@ const submit = () => {
     <section class="bg-white py-16 sm:py-20" aria-labelledby="contacto-titulo">
         <div class="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
             <h2 id="contacto-titulo" class="text-center text-3xl font-extrabold text-gray-900 sm:text-4xl">
-                ¡Queremos saber de ti!
+                {{ title }}
             </h2>
             <p class="mt-4 text-center text-gray-600">
-                Escríbenos y con gusto nos pondremos en contacto para vivir juntos una fiesta
-                sensacional. Ideal si buscas mayoreo, distribución o conocer nuestra fábrica.
-                Envíos a todo México.
+                {{ description }}
             </p>
 
             <form class="mt-10 grid gap-5" @submit.prevent="submit">
