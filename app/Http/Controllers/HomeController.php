@@ -38,7 +38,6 @@ class HomeController extends Controller
             'productos' => 'Productos',
             'encuentra-un-distribuidor' => 'Encuentra un distribuidor',
             'inspirate' => 'Inspírate',
-            'hazlo-tu-mismo' => 'Hazlo tú mismo',
         ];
 
         $name = request()->route()?->getName() ?? 'home';
@@ -56,5 +55,10 @@ class HomeController extends Controller
     public function productos(): Response
     {
         return Inertia::render('Productos');
+    }
+
+    public function hazloTuMismo(): Response
+    {
+        return Inertia::render('HazloTuMismo');
     }
 }
