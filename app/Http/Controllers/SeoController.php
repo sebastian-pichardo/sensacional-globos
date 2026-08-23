@@ -26,6 +26,7 @@ class SeoController extends Controller
             ['loc' => $base.'/encuentra-un-distribuidor', 'priority' => '0.7'],
             ['loc' => $base.'/inspirate', 'priority' => '0.7'],
             ['loc' => $base.'/hazlo-tu-mismo', 'priority' => '0.6'],
+            ['loc' => $base.'/aviso-de-privacidad', 'priority' => '0.3'],
         ];
 
         $xml = '<?xml version="1.0" encoding="UTF-8"?>';

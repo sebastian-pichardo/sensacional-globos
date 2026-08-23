@@ -13,6 +13,7 @@ const paused = ref(false);
 let timer;
 
 const hasMultiple = computed(() => props.slides.length > 1);
+const activeSlide = computed(() => props.slides[current.value] ?? props.slides[0]);
 
 const next = () => {
     if (!hasMultiple.value) {
@@ -60,7 +61,7 @@ onUnmounted(() => {
 
 <template>
     <section
-        class="relative h-[100svh] min-h-screen overflow-hidden bg-black"
+        class="relative w-full overflow-hidden bg-black"
         aria-roledescription="carousel"
         aria-label="Productos destacados"
         @mouseenter="paused = true"
@@ -70,19 +71,37 @@ onUnmounted(() => {
             Globos Sensacionales: fabricación de globos de látex para distribuidores en todo México
         </h1>
 
+        <!-- Define la altura del slider según la imagen activa (sin recortar). -->
+        <picture
+            v-if="activeSlide"
+            class="pointer-events-none block w-full opacity-0"
+            aria-hidden="true"
+        >
+            <source
+                v-if="activeSlide.imageMobile"
+                media="(max-width: 767px)"
+                :srcset="activeSlide.imageMobile"
+            />
+            <img
+                :src="activeSlide.image"
+                alt=""
+                class="block h-auto w-full"
+            />
+        </picture>
+
         <article
             v-for="(slide, index) in slides"
             :key="slide.sku || slide.alt || index"
-            class="absolute inset-0 transition-opacity duration-700"
+            class="absolute inset-0 flex items-center justify-center transition-opacity duration-700"
             :class="index === current ? 'opacity-100' : 'pointer-events-none opacity-0'"
             :aria-hidden="index !== current"
         >
             <component
                 :is="slide.href ? 'a' : 'div'"
                 :href="slide.href || undefined"
-                class="absolute inset-0 block"
+                class="flex h-full w-full items-center justify-center"
             >
-                <picture class="absolute inset-0 block h-full w-full">
+                <picture class="block h-full w-full">
                     <source
                         v-if="slide.imageMobile"
                         media="(max-width: 767px)"
@@ -91,7 +110,7 @@ onUnmounted(() => {
                     <img
                         :src="slide.image"
                         :alt="slide.alt"
-                        class="h-full w-full object-cover object-center"
+                        class="mx-auto h-full w-full object-contain object-center"
                         :loading="index === 0 ? 'eager' : 'lazy'"
                         :fetchpriority="index === 0 ? 'high' : undefined"
                     />

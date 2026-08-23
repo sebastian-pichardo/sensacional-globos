@@ -22,7 +22,7 @@
                 <p
                     class="inline-flex rounded-full bg-brand-cyan px-4 py-1 text-xs font-bold uppercase tracking-[0.2em] text-white"
                 >
-                    DIY
+                    Sin límites
                 </p>
                 <h1
                     id="diy-titulo"

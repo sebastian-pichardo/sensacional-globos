@@ -61,4 +61,9 @@ class HomeController extends Controller
     {
         return Inertia::render('HazloTuMismo');
     }
+
+    public function avisoPrivacidad(): Response
+    {
+        return Inertia::render('AvisoPrivacidad');
+    }
 }

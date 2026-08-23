@@ -18,12 +18,12 @@ const links = [
     { label: 'Nosotros', route: 'nosotros' },
     { label: 'Productos', route: 'productos' },
     { label: 'Encuentra un distribuidor', route: 'encuentra-un-distribuidor' },
-    { label: 'Inspírate', route: 'inspirate' },
     { label: 'Hazlo tú mismo', route: 'hazlo-tu-mismo' },
+    { label: 'Inspírate', route: 'inspirate' },
 ];
 
 const onScroll = () => {
-    scrolled.value = window.scrollY > 16;
+    scrolled.value = window.scrollY > 48;
 };
 
 onMounted(() => {
@@ -36,10 +36,18 @@ onUnmounted(() => {
 });
 
 const navSolid = computed(() => !props.overlay || scrolled.value || open.value);
+const navVisible = computed(() => !props.overlay || scrolled.value || open.value);
 </script>
 
 <template>
-    <header class="fixed inset-x-0 top-0 z-40">
+    <header
+        class="fixed inset-x-0 top-0 z-40 transition-[transform,opacity] duration-500 ease-out"
+        :class="
+            navVisible
+                ? 'translate-y-0 opacity-100'
+                : 'pointer-events-none -translate-y-full opacity-0'
+        "
+    >
         <p
             class="bg-brand-red px-4 py-1.5 text-center text-xs font-semibold uppercase tracking-wide text-white sm:text-sm"
         >

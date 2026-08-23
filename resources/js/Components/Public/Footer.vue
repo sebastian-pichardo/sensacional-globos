@@ -10,8 +10,8 @@ const links = [
     { label: 'Nosotros', route: 'nosotros' },
     { label: 'Productos', route: 'productos' },
     { label: 'Encuentra un distribuidor', route: 'encuentra-un-distribuidor' },
-    { label: 'Inspírate', route: 'inspirate' },
     { label: 'Hazlo tú mismo', route: 'hazlo-tu-mismo' },
+    { label: 'Inspírate', route: 'inspirate' },
 ];
 
 const networks = computed(() => [
@@ -30,7 +30,7 @@ const networks = computed(() => [
                 <img
                     src="/img/logo/logo-blanco.png"
                     alt="Globos Sensacionales"
-                    class="h-16 w-auto"
+                    class="h-32 w-auto"
                 />
                 <p class="mt-4 max-w-sm text-sm text-gray-300">
                     Fabricamos globos 100% de látex natural para distribuidores y puntos de venta.
@@ -43,7 +43,7 @@ const networks = computed(() => [
 
             <nav aria-label="Pie de página">
                 <p class="text-sm font-bold uppercase tracking-wide text-brand-cyan">
-                    Navegación
+                    Secciones
                 </p>
                 <ul class="mt-4 space-y-2">
                     <li v-for="link in links" :key="link.route">
@@ -77,7 +77,17 @@ const networks = computed(() => [
         </div>
 
         <div class="border-t border-white/10 py-4 text-center text-xs text-gray-400">
-            © {{ new Date().getFullYear() }} Globos Sensacionales. {{ shipping }}.
+            <p>
+                © {{ new Date().getFullYear() }} Pioneer Ballon. {{ shipping }}.
+            </p>
+            <p class="mt-2">
+                <Link
+                    :href="route('aviso-de-privacidad')"
+                    class="text-gray-400 transition hover:text-brand-yellow"
+                >
+                    Aviso de Privacidad
+                </Link>
+            </p>
         </div>
     </footer>
 </template>

@@ -20,6 +20,7 @@ Route::post('/encuentra-un-distribuidor/catalogo', [DistribuidorController::clas
     ->name('distribuidores.catalogo');
 Route::get('/inspirate', [HomeController::class, 'comingSoon'])->name('inspirate');
 Route::get('/hazlo-tu-mismo', [HomeController::class, 'hazloTuMismo'])->name('hazlo-tu-mismo');
+Route::get('/aviso-de-privacidad', [HomeController::class, 'avisoPrivacidad'])->name('aviso-de-privacidad');
 
 Route::post('/leads', [LeadController::class, 'store'])->name('leads.store');
 Route::post('/contacto', [ContactController::class, 'store'])->name('contacto.store');
