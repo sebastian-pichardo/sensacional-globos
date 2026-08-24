@@ -79,7 +79,7 @@ const seasonal = {
     items: [
         {
             label: 'Halloween',
-            image: '/img/productos/globos-temporada.webp',
+            image: '/img/productos/globos-sensacional-producto.webp',
             alt: 'Globos de látex de Halloween Sensacional',
         },
         {

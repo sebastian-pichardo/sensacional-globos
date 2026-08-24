@@ -45,7 +45,7 @@ const benefits = [
             <p class="mx-auto mt-3 max-w-2xl text-center text-gray-600">
                 ¿Cuáles son los beneficios?
             </p>
-
+            
             <div class="mt-10 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
                 <article
                     v-for="benefit in benefits"

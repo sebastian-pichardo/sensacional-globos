@@ -23,7 +23,6 @@ const techniques = [
     {
         title: 'Columnas y Torres Temáticas',
         accent: 'bg-brand-yellow',
-        columns: 4,
         images: [
             { src: '/img/globos/torre-tematica-1.webp', alt: 'Torre temática de globos 1' },
             { src: '/img/globos/torre-tematica-2.webp', alt: 'Torre temática de globos 2' },
@@ -119,12 +118,8 @@ const globalIndexFor = (techniqueIndex, imageIndex) => {
     return offset + imageIndex;
 };
 
-const gridClass = (technique) => {
-    if (technique.columns === 4) {
-        return 'grid-cols-2 md:grid-cols-4';
-    }
-    return 'grid-cols-1 sm:grid-cols-3';
-};
+const imageAspectClass = (imageIndex) =>
+    imageIndex === 0 ? 'aspect-[16/9]' : 'aspect-[4/3]';
 
 onMounted(() => window.addEventListener('keydown', onKey));
 onUnmounted(() => {
@@ -162,32 +157,38 @@ onUnmounted(() => {
                         </h3>
                     </div>
 
-                    <ul class="grid gap-3 md:gap-4" :class="gridClass(technique)">
+                    <ul
+                        class="grid grid-cols-2 gap-3"
+                        :class="technique.images.length === 4 ? 'sm:grid-cols-3' : ''"
+                    >
                         <li
                             v-for="(image, imageIndex) in technique.images"
                             :key="image.src"
+                            :class="
+                                imageIndex === 0
+                                    ? technique.images.length === 4
+                                        ? 'col-span-2 sm:col-span-3'
+                                        : 'col-span-2'
+                                    : 'col-span-1'
+                            "
                         >
                             <button
                                 type="button"
-                                class="group relative block w-full overflow-hidden rounded-2xl bg-gray-100 shadow-md focus:outline-none focus:ring-2 focus:ring-brand-cyan focus:ring-offset-2"
+                                class="group relative block w-full overflow-hidden bg-gray-100 shadow-md focus:outline-none focus:ring-2 focus:ring-brand-cyan focus:ring-offset-2"
                                 :aria-label="`Ver en grande: ${image.alt}`"
                                 @click="open(globalIndexFor(techniqueIndex, imageIndex))"
                             >
                                 <img
                                     :src="image.src"
                                     :alt="image.alt"
-                                    class="aspect-[4/3] h-full w-full object-cover transition duration-300 group-hover:scale-105"
+                                    :class="imageAspectClass(imageIndex)"
+                                    class="h-full w-full object-cover transition duration-300 group-hover:scale-105"
                                     loading="lazy"
                                 />
                                 <span
                                     class="pointer-events-none absolute inset-0 bg-black/0 transition group-hover:bg-black/20"
                                     aria-hidden="true"
                                 />
-                                <span
-                                    class="pointer-events-none absolute bottom-3 left-3 rounded-full bg-black/55 px-2.5 py-1 text-xs font-bold text-white"
-                                >
-                                    {{ imageIndex + 1 }} / {{ technique.images.length }}
-                                </span>
                             </button>
                         </li>
                     </ul>
