@@ -30,6 +30,17 @@
                 >
                     Encuentra a tu distribuidor
                 </h1>
+                <div class="mx-auto mt-10 w-full max-w-[400px] overflow-hidden rounded-3xl shadow-xl ring-4 ring-white/80">
+                    <img
+                        src="/img/productos/globos-sensacional-distribuidores.png"
+                        alt="Encuentar unn distribuidor de Globos Sensacionales"
+                        class="aspect-square h-auto w-full object-cover object-center"
+                        width="400"
+                        height="400"
+                        loading="eager"
+                        decoding="async"
+                    />
+                </div>
                 <p class="mx-auto mt-5 max-w-3xl text-lg leading-relaxed text-gray-700 sm:text-xl">
                     Somos aliados de los mejores distribuidores del país, conoce a nuestros socios
                     con los que crecemos día a día ofreciendo un producto de gran calidad premium.

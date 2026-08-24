@@ -1,6 +1,6 @@
 <script setup>
 import { usePage } from '@inertiajs/vue3';
-import { computed, ref } from 'vue';
+import { computed, nextTick, onMounted, onUnmounted, ref, watch } from 'vue';
 
 const page = usePage();
 const catalogUrl = computed(
@@ -11,7 +11,7 @@ const colors = [
     {
         name: 'Colores estándar',
         text: 'La base de todo inventario: colores intensos, brillosos y listos para cualquier celebración.',
-        image: '/img/productos/globos-colores.webp',
+        image: '/img/productos/globos-colores1.webp',
         alt: 'Ramo de globos de látex en colores estándar Sensacional',
         color: 'bg-brand-red',
         textClass: 'text-white',
@@ -19,7 +19,7 @@ const colors = [
     {
         name: 'Colores Perla y Metálicos',
         text: 'Brillo de anaquel y un acabado profesional para mayoreo y decoración de alto impacto.',
-        image: '/img/productos/globos-metalico.webp',
+        image: '/img/productos/globos-metalico1.webp',
         alt: 'Globos de látex perla y metálicos Sensacional',
         color: 'bg-brand-orange',
         textClass: 'text-white',
@@ -27,7 +27,7 @@ const colors = [
     {
         name: 'Colores Cristal y Neón',
         text: 'Transparencias y neones vibrantes para fiestas, retail y activaciones que se notan de lejos.',
-        image: '/img/productos/globos-neon.webp',
+        image: '/img/productos/globos-neon1.webp',
         alt: 'Globos de látex cristal y neón Sensacional',
         color: 'bg-brand-yellow',
         textClass: 'text-white',
@@ -35,7 +35,7 @@ const colors = [
     {
         name: 'Colores Vintage y fashion',
         text: 'Tonos de tendencia para decoradores que buscan un look sofisticado y actual.',
-        image: '/img/productos/globos-vintage.webp',
+        image: '/img/productos/globos-vintage1.webp',
         alt: 'Globos de látex vintage y fashion Sensacional',
         color: 'bg-brand-green',
         textClass: 'text-white',
@@ -44,8 +44,9 @@ const colors = [
 
 const printed = {
     name: 'Globos impresos',
+    anchor: 'Nuevo tamaño',
     lead: 'Lleva nuestros globos temáticos y haz de tu evento algo especial. Lleva tu mensaje fuerte y claro.',
-    image: '/img/productos/globos-graducion.webp',
+    image: '/img/productos/globos-graducion1.webp',
     alt: 'Globos de látex impresos para graduación y ocasiones especiales Sensacional',
     groups: [
         {
@@ -73,6 +74,7 @@ const printed = {
 
 const seasonal = {
     name: 'Globos de temporada especial',
+    anchor: 'Tu evento',
     lead: 'Surtido pensado para las fechas que más se celebran. Pide a tiempo y no te quedes sin inventario.',
     items: [
         {
@@ -94,6 +96,44 @@ const seasonal = {
 };
 
 const activeSeason = ref(seasonal.items[0]);
+
+const scrollToHash = () => {
+    const raw = window.location.hash.replace(/^#/, '');
+    if (!raw) {
+        return;
+    }
+
+    const id = decodeURIComponent(raw);
+    const el = document.getElementById(id);
+    if (!el) {
+        return;
+    }
+
+    const offset = 140;
+    const top = el.getBoundingClientRect().top + window.scrollY - offset;
+    window.scrollTo({ top, behavior: 'smooth' });
+};
+
+onMounted(() => {
+    nextTick(() => {
+        requestAnimationFrame(scrollToHash);
+    });
+    window.addEventListener('hashchange', scrollToHash);
+});
+
+onUnmounted(() => {
+    window.removeEventListener('hashchange', scrollToHash);
+});
+
+watch(
+    () => page.url,
+    () => {
+        nextTick(() => {
+            requestAnimationFrame(scrollToHash);
+        });
+    },
+);
+
 </script>
 
 <template>
@@ -112,8 +152,9 @@ const activeSeason = ref(seasonal.items[0]);
             <div class="mt-10 grid gap-5 sm:grid-cols-2">
                 <article
                     v-for="line in colors"
+                    :id="line.name"
                     :key="line.name"
-                    class="flex h-full flex-col overflow-hidden rounded-2xl bg-white shadow-md transition hover:-translate-y-1 hover:shadow-xl"
+                    class="scroll-mt-40 flex h-full flex-col overflow-hidden rounded-2xl bg-white shadow-md transition hover:-translate-y-1 hover:shadow-xl sm:scroll-mt-36"
                 >
                     <div class="flex flex-1 items-center justify-center bg-white p-5">
                         <img
@@ -138,7 +179,8 @@ const activeSeason = ref(seasonal.items[0]);
             </div>
 
             <article
-                class="mt-8 overflow-hidden rounded-3xl bg-white shadow-lg ring-1 ring-black/5 lg:grid lg:grid-cols-2"
+                :id="printed.anchor"
+                class="mt-8 scroll-mt-40 overflow-hidden rounded-3xl bg-white shadow-lg ring-1 ring-black/5 sm:scroll-mt-36 lg:grid lg:grid-cols-2"
             >
                 <div class="flex items-center justify-center bg-brand-purple/5 p-6 sm:p-8">
                     <img
@@ -185,7 +227,8 @@ const activeSeason = ref(seasonal.items[0]);
             </article>
 
             <article
-                class="mt-8 overflow-hidden rounded-3xl bg-white shadow-lg ring-1 ring-black/5 lg:grid lg:grid-cols-2"
+                :id="seasonal.anchor"
+                class="mt-8 scroll-mt-40 overflow-hidden rounded-3xl bg-white shadow-lg ring-1 ring-black/5 sm:scroll-mt-36 lg:grid lg:grid-cols-2"
             >
                 <div class="order-2 flex flex-col justify-center p-6 sm:p-8 lg:order-1">
                     <span

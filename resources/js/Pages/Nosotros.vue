@@ -34,6 +34,15 @@ const ogImage = computed(() => `${appUrl.value}/img/productos/fabrica.webp`);
             <AboutStory />
             <Locations />
             <GreenCommitment />
+            <section aria-label="Globos ecológicos">
+                <img
+                    src="/img/productos/globos-ecologicos.webp"
+                    alt="Globos ecológicos Sensacional"
+                    class="block h-auto w-full"
+                    loading="lazy"
+                    decoding="async"
+                />
+            </section>
         </div>
     </PublicLayout>
 </template>

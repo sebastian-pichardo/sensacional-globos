@@ -50,7 +50,7 @@ const benefits = [
                 <article
                     v-for="benefit in benefits"
                     :key="benefit.title"
-                    class="flex h-full flex-col rounded-3xl bg-white p-6 shadow-md ring-1 ring-black/5"
+                    class="flex h-full flex-col items-center rounded-3xl bg-white p-6 text-center shadow-md ring-1 ring-black/5"
                     :class="benefit.title === 'Logística sencilla' ? 'md:col-span-2 lg:col-span-1' : ''"
                 >
                     <span

@@ -4,6 +4,7 @@ use App\Http\Controllers\CatalogController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\DistribuidorController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\InspirateController;
 use App\Http\Controllers\LeadController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\SeoController;
@@ -18,7 +19,10 @@ Route::get('/encuentra-un-distribuidor', [DistribuidorController::class, 'index'
 Route::post('/encuentra-un-distribuidor/catalogo', [DistribuidorController::class, 'downloadCatalog'])
     ->middleware('throttle:10,1')
     ->name('distribuidores.catalogo');
-Route::get('/inspirate', [HomeController::class, 'comingSoon'])->name('inspirate');
+Route::get('/inspirate', [InspirateController::class, 'index'])->name('inspirate');
+Route::post('/inspirate', [InspirateController::class, 'store'])
+    ->middleware('throttle:10,1')
+    ->name('inspirate.store');
 Route::get('/hazlo-tu-mismo', [HomeController::class, 'hazloTuMismo'])->name('hazlo-tu-mismo');
 Route::get('/aviso-de-privacidad', [HomeController::class, 'avisoPrivacidad'])->name('aviso-de-privacidad');
 

@@ -48,6 +48,8 @@ const lines = [
         alt: 'Línea de globos de nuevo tamaño Sensacional',
     },
 ];
+
+const productHref = (name) => `${route('productos')}#${encodeURIComponent(name)}`;
 </script>
 
 <template>
@@ -64,33 +66,34 @@ const lines = [
             </p>
 
             <div class="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-                <article
+                <Link
                     v-for="line in lines"
                     :key="line.name"
-                    class="flex h-full flex-col overflow-hidden rounded-2xl bg-white shadow-md transition hover:-translate-y-1 hover:shadow-xl"
+                    :href="productHref(line.name)"
+                    class="flex h-full flex-col overflow-hidden rounded-2xl bg-white shadow-md transition hover:-translate-y-1 hover:shadow-xl focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-cyan"
                 >
-                    <div class="flex flex-1 items-center justify-center bg-white p-6">
-                        <img
-                            :src="line.image"
-                            :alt="line.alt"
-                            class="mx-auto h-56 w-auto max-w-full object-contain"
-                        />
-                    </div>
-                    <!-- text-gray-900 -->
-                    <div
-                        :class="[line.color, line.dark ? 'text-white' : 'text-white']"
-                        class="px-6 py-5 text-center"
-                    >
-                        <h3 class="text-2xl font-extrabold">{{ line.name }}</h3>
-                        <p class="mt-3 text-sm font-medium opacity-90">{{ line.text }}</p>
-                        <Link
-                            :href="route('productos')"
-                            class="mt-4 inline-flex text-xs font-bold uppercase tracking-wide underline-offset-4 hover:underline"
+                    <article class="flex h-full flex-col">
+                        <div class="flex flex-1 items-center justify-center bg-white p-6">
+                            <img
+                                :src="line.image"
+                                :alt="line.alt"
+                                class="mx-auto h-56 w-auto max-w-full object-contain"
+                            />
+                        </div>
+                        <div
+                            :class="[line.color, line.dark ? 'text-white' : 'text-white']"
+                            class="px-6 py-5 text-center"
                         >
-                            Ver productos →
-                        </Link>
-                    </div>
-                </article>
+                            <h3 class="text-2xl font-extrabold">{{ line.name }}</h3>
+                            <p class="mt-3 text-sm font-medium opacity-90">{{ line.text }}</p>
+                            <span
+                                class="mt-4 inline-flex text-xs font-bold uppercase tracking-wide underline-offset-4"
+                            >
+                                Ver productos →
+                            </span>
+                        </div>
+                    </article>
+                </Link>
             </div>
         </div>
     </section>

@@ -37,7 +37,6 @@ class HomeController extends Controller
             'nosotros' => 'Nosotros',
             'productos' => 'Productos',
             'encuentra-un-distribuidor' => 'Encuentra un distribuidor',
-            'inspirate' => 'Inspírate',
         ];
 
         $name = request()->route()?->getName() ?? 'home';

@@ -5,7 +5,7 @@ const types = [
     {
         title: 'El artista',
         audience: 'Decoradores y artistas del globo',
-        image: '/img/productos/artista.png',
+        image: '/img/productos/artista.svg',
         text: 'Tiene creatividad al máximo, sabe lo que quiere y va por ello. Tú lo piensas y nuestros globos lo hacen realidad.',
         cta: 'Click aquí',
         route: 'inspirate',
@@ -15,7 +15,7 @@ const types = [
     {
         title: 'El empresario',
         audience: 'Distribuidores y mayoristas',
-        image: '/img/productos/empresario.png',
+        image: '/img/productos/empresario.svg',
         text: 'Los números no son un lenguaje ajeno para ti: manejas las ganancias, los libros contables y las ventas al día, con mucha seguridad y pasión.',
         cta: 'Click aquí',
         route: 'encuentra-un-distribuidor',
@@ -25,7 +25,7 @@ const types = [
     {
         title: 'El 14 oficios',
         audience: 'Curiosos y creadores de tutoriales',
-        image: '/img/productos/distribuidor.png',
+        image: '/img/productos/oficios.svg',
         text: 'Tú solito contra el mundo, curioso e investigador. Si tienes internet, tú puedes resolverlo todo. Hazlo tú mismo es tu categoría favorita.',
         cta: 'Click aquí',
         route: 'hazlo-tu-mismo',

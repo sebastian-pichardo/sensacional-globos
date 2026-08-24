@@ -1,4 +1,6 @@
 <script setup>
+import { computed, onMounted, onUnmounted, ref } from 'vue';
+
 const locations = [
     {
         title: 'Oficina de ventas en Puebla',
@@ -34,6 +36,47 @@ const locations = [
             'Avenida Guadalajara 101, Centro Logístico Jalisco, Acatlán de Juárez, Jalisco, 45713, México',
     },
 ];
+
+const factorySlides = [
+    {
+        src: '/img/productos/fabrica-1.webp',
+        alt: 'Fábrica de Globos Sensacional en Acatlán de Juárez, Jalisco — vista 1',
+    },
+    {
+        src: '/img/productos/fabrica-2.webp',
+        alt: 'Fábrica de Globos Sensacional en Acatlán de Juárez, Jalisco — vista 2',
+    }
+];
+
+const current = ref(0);
+const paused = ref(false);
+let timer;
+
+const activeSlide = computed(() => factorySlides[current.value] ?? factorySlides[0]);
+
+const next = () => {
+    current.value = (current.value + 1) % factorySlides.length;
+};
+
+const prev = () => {
+    current.value = (current.value - 1 + factorySlides.length) % factorySlides.length;
+};
+
+const goTo = (index) => {
+    current.value = index;
+};
+
+onMounted(() => {
+    timer = setInterval(() => {
+        if (!paused.value) {
+            next();
+        }
+    }, 5000);
+});
+
+onUnmounted(() => {
+    clearInterval(timer);
+});
 
 const embedUrl = (query) =>
     `https://maps.google.com/maps?q=${encodeURIComponent(query)}&hl=es&z=15&output=embed`;
@@ -114,11 +157,70 @@ const mapsLink = (query) =>
             </div>
 
             <figure class="mt-12 overflow-hidden rounded-3xl shadow-xl ring-4 ring-brand-purple/30">
-                <img
-                    src="/img/productos/fabrica.webp"
-                    alt="Fábrica de Globos Sensacional en Acatlán de Juárez, Jalisco"
-                    class="h-auto w-full object-cover"
-                />
+                <div
+                    class="relative bg-gray-900"
+                    aria-roledescription="carousel"
+                    aria-label="Galería de la fábrica en Acatlán de Juárez"
+                    @mouseenter="paused = true"
+                    @mouseleave="paused = false"
+                >
+                    <!-- Mantiene la altura del carrusel según la imagen activa. -->
+                    <img
+                        :src="activeSlide.src"
+                        alt=""
+                        class="pointer-events-none block h-auto w-full opacity-0"
+                        aria-hidden="true"
+                    />
+
+                    <div
+                        v-for="(slide, index) in factorySlides"
+                        :key="slide.src"
+                        class="absolute inset-0 transition-opacity duration-700"
+                        :class="index === current ? 'opacity-100' : 'pointer-events-none opacity-0'"
+                        :aria-hidden="index !== current"
+                    >
+                        <img
+                            :src="slide.src"
+                            :alt="slide.alt"
+                            class="h-full w-full object-cover"
+                            :loading="index === 0 ? 'eager' : 'lazy'"
+                        />
+                    </div>
+
+                    <button
+                        type="button"
+                        class="absolute left-3 top-1/2 z-10 -translate-y-1/2 rounded-full bg-white/85 p-2 text-gray-900 shadow transition hover:bg-brand-yellow sm:left-4"
+                        aria-label="Imagen anterior de la fábrica"
+                        @click="prev"
+                    >
+                        <svg class="h-5 w-5 sm:h-6 sm:w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+                        </svg>
+                    </button>
+                    <button
+                        type="button"
+                        class="absolute right-3 top-1/2 z-10 -translate-y-1/2 rounded-full bg-white/85 p-2 text-gray-900 shadow transition hover:bg-brand-yellow sm:right-4"
+                        aria-label="Imagen siguiente de la fábrica"
+                        @click="next"
+                    >
+                        <svg class="h-5 w-5 sm:h-6 sm:w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                        </svg>
+                    </button>
+
+                    <div class="absolute bottom-4 left-1/2 z-10 flex -translate-x-1/2 gap-2" role="tablist">
+                        <button
+                            v-for="(slide, index) in factorySlides"
+                            :key="slide.src + '-dot'"
+                            type="button"
+                            class="h-2.5 rounded-full transition"
+                            :class="index === current ? 'w-8 bg-brand-red' : 'w-2.5 bg-white/75'"
+                            :aria-label="'Ver imagen ' + (index + 1) + ' de la fábrica'"
+                            :aria-selected="index === current"
+                            @click="goTo(index)"
+                        />
+                    </div>
+                </div>
                 <figcaption
                     class="bg-gradient-to-r from-brand-purple via-brand-red to-brand-orange px-6 py-4 text-center text-sm font-bold text-white"
                 >
