@@ -23,7 +23,8 @@ const submit = () => {
 <template>
     <section
         id="inscripcion"
-        class="scroll-mt-36 bg-gray-50 py-16 sm:py-20"
+        class="scroll-mt-36 bg-cover bg-center bg-no-repeat bg-gray-50 py-16 sm:py-20"
+        style="background-image: url('/img/productos/fondo-globos-sensacional.webp')"
         aria-labelledby="inscripcion-titulo"
     >
         <div class="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">

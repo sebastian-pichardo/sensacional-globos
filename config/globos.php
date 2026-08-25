@@ -58,12 +58,12 @@ return [
     ],
     'slides' => [
         [
-            'image' => '/img/productos/globos-slider1.webp',
-            'imageMobile' => '/img/productos/globos-movil-slider1.webp',
+            'image' => '/img/productos/globos-slider.webp',
+            'imageMobile' => '/img/productos/globos-movil-slider.webp',
             'name' => '',
             'sku' => '',
             'description' => '',
-            'alt' => 'Globos Sensacionales — colección 1',
+            'alt' => 'Globos Sensacionales — Catalogo 2026',
             'href' => null,
         ],
         [

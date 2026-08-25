@@ -68,9 +68,35 @@ const irAPagina = (numero) => {
             <p class="text-center text-xs font-bold uppercase tracking-[0.2em] text-brand-cyan">
                 Buscador
             </p>
-            <h2 id="buscador-titulo" class="mt-2 text-center text-3xl font-extrabold text-gray-900 sm:text-4xl">
-                Elige tu estado
-            </h2>
+            <div class="mt-2 flex items-center justify-center gap-3 sm:gap-4">
+                <span
+                    class="inline-flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-brand-cyan text-white sm:h-14 sm:w-14"
+                    aria-hidden="true"
+                >
+                    <svg
+                        class="h-6 w-6 sm:h-7 sm:w-7"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                    >
+                        <path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            stroke-width="2"
+                            d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
+                        />
+                        <path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            stroke-width="2"
+                            d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
+                        />
+                    </svg>
+                </span>
+                <h2 id="buscador-titulo" class="text-3xl font-extrabold text-gray-900 sm:text-4xl">
+                    Elige tu estado
+                </h2>
+            </div>
             <p class="mx-auto mt-3 max-w-2xl text-center text-gray-600">
                 Selecciona un estado para ver a nuestros distribuidores autorizados cerca de ti.
             </p>

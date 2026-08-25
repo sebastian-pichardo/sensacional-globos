@@ -15,7 +15,7 @@ class HomeController extends Controller
             $slides = [
                 [
                     'image' => '/img/productos/globos-slider1.webp',
-                    'imageMobile' => '/img/productos/globos-movil-slider1.webp',
+                    'imageMobile' => '/img/productos/globos-movil-slider.webp',
                     'name' => '',
                     'sku' => '',
                     'description' => '',

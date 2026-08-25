@@ -28,7 +28,7 @@ const networks = computed(() => [
         <div class="mx-auto grid max-w-7xl gap-10 px-4 py-12 sm:px-6 md:grid-cols-3 lg:px-8">
             <div>
                 <img
-                    src="/img/logo/logo-blanco.png"
+                    src="/img/logo/logo-blanco1.png"
                     alt="Globos Sensacionales"
                     class="h-32 w-auto"
                 />

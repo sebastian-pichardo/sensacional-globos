@@ -52,6 +52,17 @@ const steps = [
                 <h2 id="personalizados-titulo" class="mt-2 text-3xl font-extrabold text-gray-900 sm:text-4xl">
                     Globos personalizados
                 </h2>
+                <div class="mx-auto mt-4 w-full max-w-[400px] overflow-hidden rounded-3xl shadow-xl ring-4 ring-white/80">
+                    <img
+                        src="/img/productos/globo-personalizado.webp"
+                        alt="Impresión con logo en Globos Sensacionales"
+                        class="aspect-square h-auto w-full object-cover object-center"
+                        width="400"
+                        height="400"
+                        loading="eager"
+                        decoding="async"
+                    />
+                </div>
                 <p class="mt-4 text-lg font-semibold text-gray-800">
                     Te ayudamos a crecer: ponle tu logo a nuestros globos y crezcamos juntos.
                 </p>

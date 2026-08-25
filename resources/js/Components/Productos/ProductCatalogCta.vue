@@ -21,7 +21,7 @@ const shipping = computed(() => page.props.brand?.shipping ?? 'Envíos a todo M�
             </h2>
             <p class="mt-6 text-base leading-relaxed sm:text-lg">
                 Obtén toda la información necesaria para tener un evento sensacional.
-                {{ shipping }}.
+                
             </p>
             <a
                 :href="route('catalogo.descargar')"

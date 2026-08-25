@@ -23,10 +23,10 @@ const csrf = computed(() => page.props.csrf_token || '');
     >
         <div class="mx-auto max-w-3xl px-4 text-center sm:px-6 lg:px-8">
             <p class="text-xs font-bold uppercase tracking-[0.2em] text-gray-900/70">
-                Solo para distribuidores
+                Solo para distribuidores oficiales
             </p>
             <h2 id="catalogo-distribuidores" class="mt-2 text-3xl font-extrabold sm:text-4xl">
-                Descarga nuestro catálogo
+                Descarga contenido exclusivo para distribuidores
             </h2>
             <p class="mt-6 text-base leading-relaxed sm:text-lg">
                 Obtén toda la información necesaria para tener un evento sensacional.

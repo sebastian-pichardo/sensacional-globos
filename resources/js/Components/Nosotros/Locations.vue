@@ -224,7 +224,7 @@ const mapsLink = (query) =>
                 <figcaption
                     class="bg-gradient-to-r from-brand-purple via-brand-red to-brand-orange px-6 py-4 text-center text-sm font-bold text-white"
                 >
-                    Fábrica actual de Globos Sensacional · Acatlán de Juárez, Jalisco
+                    Un poquito de nuestra historia.
                 </figcaption>
             </figure>
         </div>

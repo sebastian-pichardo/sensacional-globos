@@ -36,8 +36,9 @@ const ogImage = computed(() => `${appUrl.value}/img/productos/globos-colores.web
         <div class="pt-40 sm:pt-36">
             <ProductHero />
             <ProductGrid />
-            <ProductBenefits />
             <CustomBalloons />
+            <ProductBenefits />
+            
             
             <ProductGallery />
             <ProductCatalogCta />

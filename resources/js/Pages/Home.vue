@@ -22,8 +22,8 @@ const description = computed(
         brand.value.seoDescription ||
         'Globos Sensacionales fabrica globos 100% de látex para distribuidores. Envíos a todo México.',
 );
-const logoUrl = computed(() => `${appUrl.value}/img/logo/logo.png`);
-const ogImage = computed(() => `${appUrl.value}/img/logo/globos-fiesta.webp`);
+const logoUrl = computed(() => `${appUrl.value}/img/logo/logo-globos-sensacional.png`);
+const ogImage = computed(() => `${appUrl.value}/img/logo/logo-globos-sensacional.png`);
 const canonical = computed(() => `${appUrl.value}/`);
 
 const slideKey = computed(() =>
