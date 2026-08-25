@@ -59,7 +59,7 @@ return [
     'slides' => [
         [
             'image' => '/img/productos/globos-slider.webp',
-            'imageMobile' => '/img/productos/globos-movil-slider.webp',
+            'imageMobile' => '/img/productos/globos-movil-slider1.webp',
             'name' => '',
             'sku' => '',
             'description' => '',
