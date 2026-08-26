@@ -45,7 +45,7 @@ const submit = () => {
                 {{ description }}
             </p>
 
-            <form class="mt-10 grid gap-5" @submit.prevent="submit">
+            <form class="mt-10 grid gap-5" @submit.prevent="submit" :aria-busy="form.processing">
                 <div>
                     <label for="contact-name" class="block text-sm font-medium text-gray-700">Nombre</label>
                     <input
@@ -54,7 +54,8 @@ const submit = () => {
                         type="text"
                         required
                         autocomplete="name"
-                        class="mt-1 w-full rounded-lg border-gray-300 shadow-sm focus:border-brand-cyan focus:ring-brand-cyan"
+                        :disabled="form.processing"
+                        class="mt-1 w-full rounded-lg border-gray-300 shadow-sm focus:border-brand-cyan focus:ring-brand-cyan disabled:opacity-60"
                     />
                     <InputError class="mt-1" :message="form.errors.name" />
                 </div>
@@ -69,7 +70,8 @@ const submit = () => {
                         type="email"
                         required
                         autocomplete="email"
-                        class="mt-1 w-full rounded-lg border-gray-300 shadow-sm focus:border-brand-cyan focus:ring-brand-cyan"
+                        :disabled="form.processing"
+                        class="mt-1 w-full rounded-lg border-gray-300 shadow-sm focus:border-brand-cyan focus:ring-brand-cyan disabled:opacity-60"
                     />
                     <InputError class="mt-1" :message="form.errors.email" />
                 </div>
@@ -84,7 +86,8 @@ const submit = () => {
                         type="tel"
                         required
                         autocomplete="tel"
-                        class="mt-1 w-full rounded-lg border-gray-300 shadow-sm focus:border-brand-cyan focus:ring-brand-cyan"
+                        :disabled="form.processing"
+                        class="mt-1 w-full rounded-lg border-gray-300 shadow-sm focus:border-brand-cyan focus:ring-brand-cyan disabled:opacity-60"
                     />
                     <InputError class="mt-1" :message="form.errors.phone" />
                 </div>
@@ -98,7 +101,8 @@ const submit = () => {
                         v-model="form.company"
                         type="text"
                         autocomplete="organization"
-                        class="mt-1 w-full rounded-lg border-gray-300 shadow-sm focus:border-brand-cyan focus:ring-brand-cyan"
+                        :disabled="form.processing"
+                        class="mt-1 w-full rounded-lg border-gray-300 shadow-sm focus:border-brand-cyan focus:ring-brand-cyan disabled:opacity-60"
                     />
                     <InputError class="mt-1" :message="form.errors.company" />
                 </div>
@@ -111,7 +115,8 @@ const submit = () => {
                         id="contact-state"
                         v-model="form.state"
                         required
-                        class="mt-1 w-full rounded-lg border-gray-300 shadow-sm focus:border-brand-cyan focus:ring-brand-cyan"
+                        :disabled="form.processing"
+                        class="mt-1 w-full rounded-lg border-gray-300 shadow-sm focus:border-brand-cyan focus:ring-brand-cyan disabled:opacity-60"
                     >
                         <option value="" disabled>Selecciona un estado</option>
                         <option v-for="state in states" :key="state" :value="state">
@@ -130,17 +135,41 @@ const submit = () => {
                         v-model="form.message"
                         required
                         rows="5"
-                        class="mt-1 w-full rounded-lg border-gray-300 shadow-sm focus:border-brand-cyan focus:ring-brand-cyan"
+                        :disabled="form.processing"
+                        class="mt-1 w-full rounded-lg border-gray-300 shadow-sm focus:border-brand-cyan focus:ring-brand-cyan disabled:opacity-60"
                     />
                     <InputError class="mt-1" :message="form.errors.message" />
                 </div>
 
+                <p
+                    v-if="form.recentlySuccessful"
+                    class="rounded-lg bg-brand-green/15 px-4 py-3 text-center text-sm font-medium text-gray-900"
+                    role="status"
+                >
+                    ¡Gracias por registrarte! Recibimos tu mensaje y nos pondremos en contacto.
+                </p>
+
                 <button
                     type="submit"
-                    class="rounded-lg bg-brand-red px-6 py-3 text-sm font-bold uppercase tracking-wide text-white transition hover:bg-brand-orange disabled:opacity-60"
+                    class="inline-flex items-center justify-center gap-2 rounded-lg bg-brand-red px-6 py-3 text-sm font-bold uppercase tracking-wide text-white transition hover:bg-brand-orange disabled:opacity-60"
                     :disabled="form.processing"
                 >
-                    Enviar mensaje
+                    <svg
+                        v-if="form.processing"
+                        class="h-4 w-4 animate-spin"
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        aria-hidden="true"
+                    >
+                        <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4" />
+                        <path
+                            class="opacity-75"
+                            fill="currentColor"
+                            d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
+                        />
+                    </svg>
+                    {{ form.processing ? 'Enviando...' : 'Enviar mensaje' }}
                 </button>
             </form>
         </div>

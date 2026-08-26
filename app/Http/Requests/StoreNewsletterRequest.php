@@ -3,9 +3,8 @@
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
-use Illuminate\Validation\Rule;
 
-class StoreContactRequest extends FormRequest
+class StoreNewsletterRequest extends FormRequest
 {
     public function authorize(): bool
     {
@@ -18,12 +17,7 @@ class StoreContactRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'name' => ['required', 'string', 'max:120'],
-            'email' => ['required', 'email', 'max:255', 'unique:contact_messages,email'],
-            'phone' => ['required', 'string', 'max:30'],
-            'company' => ['nullable', 'string', 'max:150'],
-            'state' => ['required', 'string', Rule::in(config('globos.states'))],
-            'message' => ['required', 'string', 'max:2000'],
+            'email' => ['required', 'email', 'max:255', 'unique:newsletter_subscribers,email'],
         ];
     }
 
@@ -33,12 +27,7 @@ class StoreContactRequest extends FormRequest
     public function attributes(): array
     {
         return [
-            'name' => 'nombre',
             'email' => 'correo electrónico',
-            'phone' => 'teléfono',
-            'company' => 'empresa',
-            'state' => 'dónde nos escribes',
-            'message' => 'mensaje',
         ];
     }
 

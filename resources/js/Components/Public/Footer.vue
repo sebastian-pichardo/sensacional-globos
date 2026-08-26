@@ -1,4 +1,5 @@
 <script setup>
+import NewsletterForm from '@/Components/Public/NewsletterForm.vue';
 import { Link, usePage } from '@inertiajs/vue3';
 import { computed } from 'vue';
 
@@ -25,7 +26,7 @@ const networks = computed(() => [
 
 <template>
     <footer class="bg-gray-950 text-white">
-        <div class="mx-auto grid max-w-7xl gap-10 px-4 py-12 sm:px-6 md:grid-cols-3 lg:px-8">
+        <div class="mx-auto grid max-w-7xl gap-10 px-4 py-12 sm:px-6 md:grid-cols-2 lg:grid-cols-4 lg:px-8">
             <div>
                 <img
                     src="/img/logo/logo-blanco1.png"
@@ -74,6 +75,8 @@ const networks = computed(() => [
                     </li>
                 </ul>
             </div>
+
+            <NewsletterForm />
         </div>
 
         <div class="border-t border-white/10 py-4 text-center text-xs text-gray-400">

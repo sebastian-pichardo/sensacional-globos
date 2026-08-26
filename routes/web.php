@@ -6,6 +6,7 @@ use App\Http\Controllers\DistribuidorController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\InspirateController;
 use App\Http\Controllers\LeadController;
+use App\Http\Controllers\NewsletterController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\SeoController;
 use Illuminate\Support\Facades\Route;
@@ -27,7 +28,12 @@ Route::get('/hazlo-tu-mismo', [HomeController::class, 'hazloTuMismo'])->name('ha
 Route::get('/aviso-de-privacidad', [HomeController::class, 'avisoPrivacidad'])->name('aviso-de-privacidad');
 
 Route::post('/leads', [LeadController::class, 'store'])->name('leads.store');
-Route::post('/contacto', [ContactController::class, 'store'])->name('contacto.store');
+Route::post('/contacto', [ContactController::class, 'store'])
+    ->middleware('throttle:10,1')
+    ->name('contacto.store');
+Route::post('/newsletter', [NewsletterController::class, 'store'])
+    ->middleware('throttle:10,1')
+    ->name('newsletter.store');
 Route::get('/catalogo/descargar', [CatalogController::class, 'download'])->name('catalogo.descargar');
 
 Route::get('/robots.txt', [SeoController::class, 'robots'])->name('robots');

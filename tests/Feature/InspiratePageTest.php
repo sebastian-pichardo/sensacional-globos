@@ -2,9 +2,11 @@
 
 namespace Tests\Feature;
 
+use App\Mail\DecoratorApplicationMail;
 use App\Models\DecoratorApplication;
 use Illuminate\Foundation\Http\Middleware\ValidateCsrfToken;
 use Illuminate\Foundation\Testing\RefreshDatabase;
+use Illuminate\Support\Facades\Mail;
 use Inertia\Testing\AssertableInertia as Assert;
 use Tests\TestCase;
 
@@ -21,6 +23,7 @@ class InspiratePageTest extends TestCase
 
     public function test_decorator_application_can_be_stored(): void
     {
+        Mail::fake();
         $this->withoutMiddleware(ValidateCsrfToken::class);
 
         $payload = [
@@ -44,6 +47,11 @@ class InspiratePageTest extends TestCase
         ]);
 
         $this->assertSame(1, DecoratorApplication::query()->count());
+
+        Mail::assertSent(DecoratorApplicationMail::class, function (DecoratorApplicationMail $mail) {
+            return $mail->application->email === 'ana@example.com'
+                && $mail->hasTo('destino@example.com');
+        });
     }
 
     public function test_decorator_application_requires_core_fields(): void

@@ -4,6 +4,10 @@ return [
     'name' => 'Globos Sensacionales',
     'shipping' => 'Envíos a todo México',
     'whatsapp' => env('GLOBOS_WHATSAPP', '5210000000000'),
+    'mail' => [
+        'from' => env('GLOBOS_MAIL'),
+        'to' => env('GLOBOS_MAIL_SEND'),
+    ],
     'whatsapp_message' => 'Hola, me interesa ser distribuidor de Globos Sensacionales y conocer sus productos. Envíos a todo México.',
     'catalog_path' => env('GLOBOS_CATALOG_PATH', 'catalogo/catalogo-sensacional.pdf'),
     'catalog_view_url' => '/catalogo/2026/Catalogo-Sensacional-2026.php',

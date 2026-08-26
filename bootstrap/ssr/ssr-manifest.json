@@ -13,16 +13,16 @@
     "/build/assets/DeleteUserForm-CBpOevIw.js"
   ],
   "resources/js/Components/Distribuidores/DistributorCatalog.vue": [
-    "/build/assets/EncuentraDistribuidor-Cko4MT2K.js"
+    "/build/assets/EncuentraDistribuidor-5JPRFieF.js"
   ],
   "resources/js/Components/Distribuidores/DistributorFamily.vue": [
-    "/build/assets/EncuentraDistribuidor-Cko4MT2K.js"
+    "/build/assets/EncuentraDistribuidor-5JPRFieF.js"
   ],
   "resources/js/Components/Distribuidores/DistributorHero.vue": [
-    "/build/assets/EncuentraDistribuidor-Cko4MT2K.js"
+    "/build/assets/EncuentraDistribuidor-5JPRFieF.js"
   ],
   "resources/js/Components/Distribuidores/DistributorSearch.vue": [
-    "/build/assets/EncuentraDistribuidor-Cko4MT2K.js"
+    "/build/assets/EncuentraDistribuidor-5JPRFieF.js"
   ],
   "resources/js/Components/Dropdown.vue": [
     "/build/assets/AuthenticatedLayout-3mNGUoZS.js"
@@ -31,37 +31,37 @@
     "/build/assets/AuthenticatedLayout-3mNGUoZS.js"
   ],
   "resources/js/Components/HazloTuMismo/DiyCreativityCta.vue": [
-    "/build/assets/HazloTuMismo-DoehW9IS.js"
+    "/build/assets/HazloTuMismo-BS-ZSu0Z.js"
   ],
   "resources/js/Components/HazloTuMismo/DiyDiagramCta.vue": [
-    "/build/assets/HazloTuMismo-DoehW9IS.js"
+    "/build/assets/HazloTuMismo-BS-ZSu0Z.js"
   ],
   "resources/js/Components/HazloTuMismo/DiyHero.vue": [
-    "/build/assets/HazloTuMismo-DoehW9IS.js"
+    "/build/assets/HazloTuMismo-BS-ZSu0Z.js"
   ],
   "resources/js/Components/HazloTuMismo/DiyTechniques.vue": [
-    "/build/assets/HazloTuMismo-DoehW9IS.js"
+    "/build/assets/HazloTuMismo-BS-ZSu0Z.js"
   ],
   "resources/js/Components/HazloTuMismo/DiyTutorials.vue": [
-    "/build/assets/HazloTuMismo-DoehW9IS.js"
+    "/build/assets/HazloTuMismo-BS-ZSu0Z.js"
   ],
   "resources/js/Components/Home/CatalogCta.vue": [
-    "/build/assets/Home-DVcg459m.js"
+    "/build/assets/Home-DQ5yrrgD.js"
   ],
   "resources/js/Components/Home/Certifications.vue": [
-    "/build/assets/Home-DVcg459m.js"
+    "/build/assets/Home-DQ5yrrgD.js"
   ],
   "resources/js/Components/Home/ContactForm.vue": [
-    "/build/assets/ContactForm-DwMSaEJC.js"
+    "/build/assets/ContactForm-BWUhdimd.js"
   ],
   "resources/js/Components/Home/HeroSlider.vue": [
-    "/build/assets/Home-DVcg459m.js"
+    "/build/assets/Home-DQ5yrrgD.js"
   ],
   "resources/js/Components/Home/PartyTypes.vue": [
-    "/build/assets/Home-DVcg459m.js"
+    "/build/assets/Home-DQ5yrrgD.js"
   ],
   "resources/js/Components/Home/ProductLines.vue": [
-    "/build/assets/Home-DVcg459m.js"
+    "/build/assets/Home-DQ5yrrgD.js"
   ],
   "resources/js/Components/InputError.vue": [
     "/build/assets/InputError-C5ky-J1T.js"
@@ -70,16 +70,16 @@
     "/build/assets/TextInput-Dr24WIxr.js"
   ],
   "resources/js/Components/Inspirate/InspirateCommunity.vue": [
-    "/build/assets/Inspirate-C91l4OQC.js"
+    "/build/assets/Inspirate-o79FBI7b.js"
   ],
   "resources/js/Components/Inspirate/InspirateForm.vue": [
-    "/build/assets/Inspirate-C91l4OQC.js"
+    "/build/assets/Inspirate-o79FBI7b.js"
   ],
   "resources/js/Components/Inspirate/InspirateHero.vue": [
-    "/build/assets/Inspirate-C91l4OQC.js"
+    "/build/assets/Inspirate-o79FBI7b.js"
   ],
   "resources/js/Components/Inspirate/InspirateIntro.vue": [
-    "/build/assets/Inspirate-C91l4OQC.js"
+    "/build/assets/Inspirate-o79FBI7b.js"
   ],
   "resources/js/Components/Modal.vue": [
     "/build/assets/DeleteUserForm-CBpOevIw.js"
@@ -88,52 +88,55 @@
     "/build/assets/AuthenticatedLayout-3mNGUoZS.js"
   ],
   "resources/js/Components/Nosotros/AboutStory.vue": [
-    "/build/assets/Nosotros-CarzctrT.js"
+    "/build/assets/Nosotros-CG8jgTf9.js"
   ],
   "resources/js/Components/Nosotros/GreenCommitment.vue": [
-    "/build/assets/Nosotros-CarzctrT.js"
+    "/build/assets/Nosotros-CG8jgTf9.js"
   ],
   "resources/js/Components/Nosotros/Locations.vue": [
-    "/build/assets/Nosotros-CarzctrT.js"
+    "/build/assets/Nosotros-CG8jgTf9.js"
   ],
   "resources/js/Components/PrimaryButton.vue": [
     "/build/assets/PrimaryButton-CIooT64n.js"
   ],
   "resources/js/Components/Productos/CustomBalloons.vue": [
-    "/build/assets/Productos-FEgJtKxD.js"
+    "/build/assets/Productos-V4vnXram.js"
   ],
   "resources/js/Components/Productos/ProductBenefits.vue": [
-    "/build/assets/Productos-FEgJtKxD.js"
+    "/build/assets/Productos-V4vnXram.js"
   ],
   "resources/js/Components/Productos/ProductCatalogCta.vue": [
-    "/build/assets/Productos-FEgJtKxD.js"
+    "/build/assets/Productos-V4vnXram.js"
   ],
   "resources/js/Components/Productos/ProductGallery.vue": [
-    "/build/assets/Productos-FEgJtKxD.js"
+    "/build/assets/Productos-V4vnXram.js"
   ],
   "resources/js/Components/Productos/ProductGrid.vue": [
-    "/build/assets/Productos-FEgJtKxD.js"
+    "/build/assets/Productos-V4vnXram.js"
   ],
   "resources/js/Components/Productos/ProductHero.vue": [
-    "/build/assets/Productos-FEgJtKxD.js"
+    "/build/assets/Productos-V4vnXram.js"
   ],
   "resources/js/Components/Public/DistributorPopup.vue": [
-    "/build/assets/PublicLayout-NujhlgEm.js"
+    "/build/assets/PublicLayout-D_DB9IWc.js"
   ],
   "resources/js/Components/Public/FlashToast.vue": [
-    "/build/assets/PublicLayout-NujhlgEm.js"
+    "/build/assets/PublicLayout-D_DB9IWc.js"
   ],
   "resources/js/Components/Public/Footer.vue": [
-    "/build/assets/PublicLayout-NujhlgEm.js"
+    "/build/assets/PublicLayout-D_DB9IWc.js"
   ],
   "resources/js/Components/Public/Navbar.vue": [
-    "/build/assets/PublicLayout-NujhlgEm.js"
+    "/build/assets/PublicLayout-D_DB9IWc.js"
+  ],
+  "resources/js/Components/Public/NewsletterForm.vue": [
+    "/build/assets/PublicLayout-D_DB9IWc.js"
   ],
   "resources/js/Components/Public/SocialBar.vue": [
-    "/build/assets/PublicLayout-NujhlgEm.js"
+    "/build/assets/PublicLayout-D_DB9IWc.js"
   ],
   "resources/js/Components/Public/WhatsAppButton.vue": [
-    "/build/assets/PublicLayout-NujhlgEm.js"
+    "/build/assets/PublicLayout-D_DB9IWc.js"
   ],
   "resources/js/Components/ResponsiveNavLink.vue": [
     "/build/assets/AuthenticatedLayout-3mNGUoZS.js"
@@ -151,7 +154,7 @@
     "/build/assets/GuestLayout-39lAgZRd.js"
   ],
   "resources/js/Layouts/PublicLayout.vue": [
-    "/build/assets/PublicLayout-NujhlgEm.js"
+    "/build/assets/PublicLayout-D_DB9IWc.js"
   ],
   "resources/js/Pages/Auth/ConfirmPassword.vue": [
     "/build/assets/ConfirmPassword-BnLcrIWq.js"
@@ -172,31 +175,31 @@
     "/build/assets/VerifyEmail-FP-AO_jQ.js"
   ],
   "resources/js/Pages/AvisoPrivacidad.vue": [
-    "/build/assets/AvisoPrivacidad-BED89o3d.js"
+    "/build/assets/AvisoPrivacidad-C0w00wbI.js"
   ],
   "resources/js/Pages/ComingSoon.vue": [
-    "/build/assets/ComingSoon-C7S_2hko.js"
+    "/build/assets/ComingSoon-Cc1qqRz5.js"
   ],
   "resources/js/Pages/Dashboard.vue": [
     "/build/assets/Dashboard-DzKliRIq.js"
   ],
   "resources/js/Pages/EncuentraDistribuidor.vue": [
-    "/build/assets/EncuentraDistribuidor-Cko4MT2K.js"
+    "/build/assets/EncuentraDistribuidor-5JPRFieF.js"
   ],
   "resources/js/Pages/HazloTuMismo.vue": [
-    "/build/assets/HazloTuMismo-DoehW9IS.js"
+    "/build/assets/HazloTuMismo-BS-ZSu0Z.js"
   ],
   "resources/js/Pages/Home.vue": [
-    "/build/assets/Home-DVcg459m.js"
+    "/build/assets/Home-DQ5yrrgD.js"
   ],
   "resources/js/Pages/Inspirate.vue": [
-    "/build/assets/Inspirate-C91l4OQC.js"
+    "/build/assets/Inspirate-o79FBI7b.js"
   ],
   "resources/js/Pages/Nosotros.vue": [
-    "/build/assets/Nosotros-CarzctrT.js"
+    "/build/assets/Nosotros-CG8jgTf9.js"
   ],
   "resources/js/Pages/Productos.vue": [
-    "/build/assets/Productos-FEgJtKxD.js"
+    "/build/assets/Productos-V4vnXram.js"
   ],
   "resources/js/Pages/Profile/Edit.vue": [
     "/build/assets/Edit-BWN7uith.js"
