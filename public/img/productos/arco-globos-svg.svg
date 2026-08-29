@@ -1,0 +1,98 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000" width="100%" height="100%">
+  <defs>
+    <!-- Background grid pattern -->
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#e2e8f0" stroke-width="1.5"/>
+    </pattern>
+    
+    <!-- Grupo A — Estándar -->
+    <radialGradient id="gradA" cx="35%" cy="35%" r="65%">
+      <stop offset="0%" stop-color="var(--arco-a-light, #60a5fa)"/>
+      <stop offset="40%" stop-color="var(--arco-a, #2563eb)"/>
+      <stop offset="100%" stop-color="var(--arco-a-dark, #1e40af)"/>
+    </radialGradient>
+    
+    <!-- Grupo B — Metal -->
+    <radialGradient id="gradB" cx="35%" cy="35%" r="65%">
+      <stop offset="0%" stop-color="var(--arco-b-light, #e2e8f0)"/>
+      <stop offset="40%" stop-color="var(--arco-b, #94a3b8)"/>
+      <stop offset="100%" stop-color="var(--arco-b-dark, #64748b)"/>
+    </radialGradient>
+
+    <!-- Grupo C — Fashion -->
+    <radialGradient id="gradC" cx="35%" cy="35%" r="65%">
+      <stop offset="0%" stop-color="var(--arco-c-light, #ffffff)"/>
+      <stop offset="50%" stop-color="var(--arco-c, #f1f5f9)"/>
+      <stop offset="100%" stop-color="var(--arco-c-dark, #cbd5e1)"/>
+    </radialGradient>
+  </defs>
+
+  <!-- Background with grid -->
+  <rect width="1000" height="1000" fill="#ffffff"/>
+  <rect width="1000" height="1000" fill="url(#grid)"/>
+
+  <!-- Balloon Arch Group -->
+  <g stroke="#0f172a" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+    
+    <!-- LEFT SIDE -->
+    <!-- Base -->
+    <circle cx="280" cy="830" r="75" fill="url(#gradC)" />
+    <path d="M 245 795 Q 265 775 295 790" fill="none" stroke="#ffffff" stroke-width="6" opacity="0.8"/>
+
+    <!-- Lower Pillar -->
+    <circle cx="260" cy="690" r="85" fill="url(#gradA)" />
+    <path d="M 220 655 Q 245 630 275 645" fill="none" stroke="#ffffff" stroke-width="6" opacity="0.8"/>
+    <circle cx="345" cy="680" r="38" fill="url(#gradB)" />
+
+    <circle cx="270" cy="570" r="60" fill="url(#gradC)" />
+    <circle cx="370" cy="600" r="65" fill="url(#gradB)" />
+
+    <circle cx="320" cy="480" r="90" fill="url(#gradA)" />
+    <path d="M 280 440 Q 310 410 350 430" fill="none" stroke="#ffffff" stroke-width="6" opacity="0.8"/>
+    <circle cx="435" cy="495" r="70" fill="url(#gradA)" />
+
+    <!-- Upper Left Arch -->
+    <circle cx="370" cy="370" r="75" fill="url(#gradC)" />
+    
+    <circle cx="330" cy="250" r="80" fill="url(#gradA)" />
+    <circle cx="460" cy="320" r="65" fill="url(#gradB)" />
+
+    <circle cx="360" cy="140" r="68" fill="url(#gradA)" />
+    <circle cx="475" cy="205" r="72" fill="url(#gradB)" />
+
+    <!-- PEAK CENTER -->
+    <circle cx="465" cy="110" r="55" fill="url(#gradA)" />
+    <circle cx="585" cy="115" r="115" fill="url(#gradA)" />
+    <!-- Giant central balloon highlight -->
+    <path d="M 520 60 Q 565 20 615 45" fill="none" stroke="#ffffff" stroke-width="8" opacity="0.9"/>
+    <path d="M 535 80 Q 550 65 575 75" fill="none" stroke="#ffffff" stroke-width="5" opacity="0.8"/>
+
+    <!-- RIGHT SIDE -->
+    <circle cx="610" cy="210" r="65" fill="url(#gradB)" />
+    <circle cx="740" cy="290" r="80" fill="url(#gradA)" />
+
+    <circle cx="730" cy="150" r="65" fill="url(#gradC)" />
+    <circle cx="810" cy="210" r="50" fill="url(#gradC)" />
+    <circle cx="780" cy="250" r="45" fill="url(#gradA)" />
+
+    <circle cx="845" cy="295" r="65" fill="url(#gradB)" />
+    <circle cx="810" cy="415" r="75" fill="url(#gradC)" />
+
+    <!-- Right Arch Downward -->
+    <circle cx="915" cy="375" r="55" fill="url(#gradA)" />
+    <circle cx="880" cy="485" r="90" fill="url(#gradA)" />
+    <circle cx="930" cy="580" r="68" fill="url(#gradC)" />
+
+    <!-- Right Pillar Upper -->
+    <circle cx="865" cy="625" r="65" fill="url(#gradB)" />
+    <circle cx="980" cy="590" r="45" fill="url(#gradC)" />
+    <circle cx="815" cy="700" r="50" fill="url(#gradA)" />
+    <circle cx="935" cy="685" r="85" fill="url(#gradB)" />
+    <path d="M 895 650 Q 925 625 955 640" fill="none" stroke="#ffffff" stroke-width="6" opacity="0.8"/>
+
+    <!-- Right Pillar Base -->
+    <circle cx="910" cy="830" r="75" fill="url(#gradC)" />
+    <path d="M 875 795 Q 895 775 925 790" fill="none" stroke="#ffffff" stroke-width="6" opacity="0.8"/>
+    
+  </g>
+</svg>

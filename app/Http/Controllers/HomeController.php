@@ -2,6 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\GloboEstandar;
+use App\Models\GloboMetal;
+use App\Models\GloboModa;
+use Illuminate\Support\Collection;
 use Inertia\Inertia;
 use Inertia\Response;
 
@@ -58,7 +62,37 @@ class HomeController extends Controller
 
     public function hazloTuMismo(): Response
     {
-        return Inertia::render('HazloTuMismo');
+        return Inertia::render('HazloTuMismo', [
+            'lineasColor' => [
+                'estandar' => $this->coloresActivos(GloboEstandar::class),
+                'metal' => $this->coloresActivos(GloboMetal::class),
+                'moda' => $this->coloresActivos(GloboModa::class),
+            ],
+        ]);
+    }
+
+    /**
+     * @param  class-string  $model
+     * @return list<array{id: int, nombre: string, color: string}>
+     */
+    private function coloresActivos(string $model): array
+    {
+        /** @var Collection<int, object> $rows */
+        $rows = $model::query()
+            ->where('activo', 'si')
+            ->whereNotNull('color')
+            ->orderBy('id')
+            ->get(['id', 'nombre', 'color']);
+
+        return $rows
+            ->unique(fn ($row) => strtoupper(trim((string) $row->color)))
+            ->values()
+            ->map(fn ($row) => [
+                'id' => (int) $row->id,
+                'nombre' => (string) $row->nombre,
+                'color' => (string) $row->color,
+            ])
+            ->all();
     }
 
     public function avisoPrivacidad(): Response

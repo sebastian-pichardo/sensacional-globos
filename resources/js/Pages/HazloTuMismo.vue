@@ -8,6 +8,13 @@ import PublicLayout from '@/Layouts/PublicLayout.vue';
 import { Head, usePage } from '@inertiajs/vue3';
 import { computed } from 'vue';
 
+defineProps({
+    lineasColor: {
+        type: Object,
+        required: true,
+    },
+});
+
 const page = usePage();
 const appUrl = computed(() => page.props.appUrl ?? page.props.ziggy?.url ?? '');
 const description = computed(
@@ -35,7 +42,7 @@ const ogImage = computed(() => `${appUrl.value}/img/globos/guirnalda-1.webp`);
         <div class="pt-40 sm:pt-36">
             <DiyHero />
             <DiyTechniques />
-            <DiyCreativityCta />
+            <DiyCreativityCta :lineas-color="lineasColor" />
             <DiyTutorials />
             <DiyDiagramCta />
         </div>

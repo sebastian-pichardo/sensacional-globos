@@ -1,5 +1,13 @@
 <script setup>
 import { Link } from '@inertiajs/vue3';
+import DiyArchColorPicker from '@/Components/HazloTuMismo/DiyArchColorPicker.vue';
+
+defineProps({
+    lineasColor: {
+        type: Object,
+        required: true,
+    },
+});
 </script>
 
 <template>
@@ -16,14 +24,14 @@ import { Link } from '@inertiajs/vue3';
             aria-hidden="true"
         />
 
-        <div class="relative mx-auto max-w-3xl px-4 text-center sm:px-6 lg:px-8">
+        <div class="relative mx-auto max-w-6xl px-4 text-center sm:px-6 lg:px-8">
             <p class="text-xs font-bold uppercase tracking-[0.2em] text-brand-purple">
                 Sin límites
             </p>
             <h2 id="creatividad-titulo" class="mt-2 text-3xl font-extrabold text-gray-900 sm:text-4xl">
                 Y muchas más
             </h2>
-            <p class="mt-5 text-base leading-relaxed text-gray-700 sm:text-lg">
+            <p class="mx-auto mt-5 max-w-3xl text-base leading-relaxed text-gray-700 sm:text-lg">
                 El límite es tu creatividad. Puedes inspirarte de otros profesionales: echa un
                 vistazo a ideas, tendencias y combinaciones que elevan cualquier celebración.
             </p>
@@ -33,6 +41,8 @@ import { Link } from '@inertiajs/vue3';
             >
                 Inspírate
             </Link>
+
+            <DiyArchColorPicker :lineas-color="lineasColor" />
         </div>
     </section>
 </template>
