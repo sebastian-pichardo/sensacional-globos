@@ -80,7 +80,7 @@ return [
             'href' => null,
         ],
         [
-            'image' => '/img/productos/globos-slider3.webp',
+            'image' => '/img/productos/globossensacional-halloweenmuertos.webp',
             'imageMobile' => '/img/productos/globos-movil-slider3.webp',
             'name' => '',
             'sku' => '',
