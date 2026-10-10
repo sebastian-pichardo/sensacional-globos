@@ -3,7 +3,7 @@
 return [
     'name' => 'Globos Sensacionales',
     'shipping' => 'Envíos a todo México',
-    'whatsapp' => env('GLOBOS_WHATSAPP', '5210000000000'),
+    'whatsapp' => env('GLOBOS_WHATSAPP', '5212225083848'),
     'mail' => [
         'from' => env('GLOBOS_MAIL'),
         'to' => env('GLOBOS_MAIL_SEND'),
@@ -18,7 +18,7 @@ return [
     'distributor_catalog_hint' => 'Descarga aquí recursos descargables para distribuidores, pide con tu asesor tu contraseña personal para poder tener acceso a estas herramientas de venta especiales para tí.',
     'social' => [
         'instagram' => env('GLOBOS_INSTAGRAM', 'https://www.instagram.com/globos_sensacional/'),
-        'facebook' => env('GLOBOS_FACEBOOK', 'https://www.facebook.com/SensacionalGlobos'),
+        'facebook' => env('GLOBOS_FACEBOOK', 'https://www.facebook.com/sensacional.by.qualatex'),
         'pinterest' => env('GLOBOS_PINTEREST', 'https://mx.pinterest.com/globossensacional/'),
         'tiktok' => env('GLOBOS_TIKTOK', 'https://www.tiktok.com/@globossensacional'),
         'youtube' => env('GLOBOS_YOUTUBE', 'https://www.youtube.com/@GlobosSensacional'),
@@ -81,7 +81,7 @@ return [
         ],
         [
             'image' => '/img/productos/globossensacional-halloweenmuertos.webp',
-            'imageMobile' => '/img/productos/globos-movil-slider3.webp',
+            'imageMobile' => '/img/productos/globossensacional-halloween.webp',
             'name' => '',
             'sku' => '',
             'description' => '',
