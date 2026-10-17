@@ -3,6 +3,7 @@
 use App\Http\Controllers\CatalogController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\DistribuidorController;
+use App\Http\Controllers\DiyGloboController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\InspirateController;
 use App\Http\Controllers\LeadController;
@@ -25,6 +26,11 @@ Route::post('/inspirate', [InspirateController::class, 'store'])
     ->middleware('throttle:10,1')
     ->name('inspirate.store');
 Route::get('/hazlo-tu-mismo', [HomeController::class, 'hazloTuMismo'])->name('hazlo-tu-mismo');
+Route::get('/api/diy-globos/configuracion', [DiyGloboController::class, 'configuracion'])
+    ->name('diy-globos.configuracion');
+Route::post('/api/diy-globos/guardar-seleccion', [DiyGloboController::class, 'guardarSeleccion'])
+    ->middleware('throttle:20,1')
+    ->name('diy-globos.guardar-seleccion');
 Route::get('/aviso-de-privacidad', [HomeController::class, 'avisoPrivacidad'])->name('aviso-de-privacidad');
 
 Route::post('/leads', [LeadController::class, 'store'])->name('leads.store');

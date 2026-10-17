@@ -30,23 +30,23 @@
   "resources/js/Components/DropdownLink.vue": [
     "/build/assets/AuthenticatedLayout-3mNGUoZS.js"
   ],
-  "resources/js/Components/HazloTuMismo/DiyArchColorPicker.vue": [
-    "/build/assets/HazloTuMismo-dAlh1CPl.js"
-  ],
-  "resources/js/Components/HazloTuMismo/DiyCreativityCta.vue": [
-    "/build/assets/HazloTuMismo-dAlh1CPl.js"
-  ],
   "resources/js/Components/HazloTuMismo/DiyDiagramCta.vue": [
-    "/build/assets/HazloTuMismo-dAlh1CPl.js"
+    "/build/assets/HazloTuMismo-HurkEnzt.js"
   ],
   "resources/js/Components/HazloTuMismo/DiyHero.vue": [
-    "/build/assets/HazloTuMismo-dAlh1CPl.js"
+    "/build/assets/HazloTuMismo-HurkEnzt.js"
+  ],
+  "resources/js/Components/HazloTuMismo/DiyShakerGlobos.vue": [
+    "/build/assets/HazloTuMismo-HurkEnzt.js"
+  ],
+  "resources/js/Components/HazloTuMismo/DiyShakerPalette.vue": [
+    "/build/assets/HazloTuMismo-HurkEnzt.js"
   ],
   "resources/js/Components/HazloTuMismo/DiyTechniques.vue": [
-    "/build/assets/HazloTuMismo-dAlh1CPl.js"
+    "/build/assets/HazloTuMismo-HurkEnzt.js"
   ],
   "resources/js/Components/HazloTuMismo/DiyTutorials.vue": [
-    "/build/assets/HazloTuMismo-dAlh1CPl.js"
+    "/build/assets/HazloTuMismo-HurkEnzt.js"
   ],
   "resources/js/Components/Home/CatalogCta.vue": [
     "/build/assets/Home-ugZtvkrc.js"
@@ -190,7 +190,7 @@
     "/build/assets/EncuentraDistribuidor-BrAtsOmD.js"
   ],
   "resources/js/Pages/HazloTuMismo.vue": [
-    "/build/assets/HazloTuMismo-dAlh1CPl.js"
+    "/build/assets/HazloTuMismo-HurkEnzt.js"
   ],
   "resources/js/Pages/Home.vue": [
     "/build/assets/Home-ugZtvkrc.js"

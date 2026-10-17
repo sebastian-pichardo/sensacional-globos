@@ -16,6 +16,7 @@ return new class extends Migration
             $table->string('nombre');
             $table->string('medida');
             $table->string('descripcion', 355)->nullable();
+            $table->string('imagen', 355)->nullable();
             $table->softDeletes();
             $table->timestamps();
         });

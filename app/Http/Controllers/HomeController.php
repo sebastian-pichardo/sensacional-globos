@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Globo;
 use App\Models\GloboEstandar;
 use App\Models\GloboMetal;
 use App\Models\GloboModa;
+use App\Models\GloboTieneColor;
 use Illuminate\Support\Collection;
 use Inertia\Inertia;
 use Inertia\Response;
@@ -68,7 +70,61 @@ class HomeController extends Controller
                 'metal' => $this->coloresActivos(GloboMetal::class),
                 'moda' => $this->coloresActivos(GloboModa::class),
             ],
+            'tiposGlobo' => $this->tiposGlobo(),
         ]);
+    }
+
+    /**
+     * @return list<array{id: int, nombre: string, medida: string, colores: list<array{id: int, nombre: string, hexadecimal: string}>}>
+     */
+    private function tiposGlobo(): array
+    {
+        return Globo::query()
+            ->with(['tieneColores.colorCatalogo'])
+            ->orderBy('id')
+            ->get()
+            ->map(function (Globo $globo) {
+                $colores = $globo->tieneColores
+                    ->map(function (GloboTieneColor $relacion) {
+                        $color = $relacion->colorCatalogo;
+                        if ($color === null) {
+                            return null;
+                        }
+
+                        $hex = $this->normalizarHex($color->hexadecimal);
+                        if ($hex === null) {
+                            return null;
+                        }
+
+                        return [
+                            'id' => (int) $color->id,
+                            'nombre' => (string) $color->nombre,
+                            'hexadecimal' => $hex,
+                        ];
+                    })
+                    ->filter()
+                    ->unique('id')
+                    ->values()
+                    ->all();
+
+                return [
+                    'id' => (int) $globo->id,
+                    'nombre' => (string) $globo->nombre,
+                    'medida' => (string) $globo->medida,
+                    'colores' => $colores,
+                ];
+            })
+            ->all();
+    }
+
+    private function normalizarHex(?string $hex): ?string
+    {
+        $hex = strtoupper(ltrim(trim((string) $hex), '#'));
+        if (preg_match('/^[0-9A-F]{6}$/', $hex) !== 1) {
+            return null;
+        }
+
+        return '#'.$hex;
     }
 
     /**
