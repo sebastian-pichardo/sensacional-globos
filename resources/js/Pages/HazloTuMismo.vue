@@ -52,7 +52,7 @@ const ogImage = computed(() => `${appUrl.value}/img/globos/guirnalda-1.webp`);
             <DiyHero />
             <DiyTechniques />
             <!-- <DiyCreativityCta :lineas-color="lineasColor" /> -->
-            <DiyShakerGlobos />
+            <!-- <DiyShakerGlobos /> -->
             <DiyShakerPalette :tipos-globo="tiposGlobo" />
             <DiyTutorials />
             <DiyDiagramCta />

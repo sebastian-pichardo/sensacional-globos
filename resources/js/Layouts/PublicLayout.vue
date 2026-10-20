@@ -1,4 +1,5 @@
 <script setup>
+import CookieNotice from '@/Components/Public/CookieNotice.vue';
 import DistributorPopup from '@/Components/Public/DistributorPopup.vue';
 import FlashToast from '@/Components/Public/FlashToast.vue';
 import Footer from '@/Components/Public/Footer.vue';
@@ -24,6 +25,7 @@ defineProps({
         <SocialBar />
         <WhatsAppButton />
         <DistributorPopup />
+        <CookieNotice />
         <FlashToast />
     </div>
 </template>

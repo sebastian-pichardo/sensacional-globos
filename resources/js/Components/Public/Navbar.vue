@@ -40,27 +40,23 @@ const navVisible = computed(() => !props.overlay || scrolled.value || open.value
 </script>
 
 <template>
-    <header
-        class="fixed inset-x-0 top-0 z-40 transition-[transform,opacity] duration-500 ease-out"
-        :class="
-            navVisible
-                ? 'translate-y-0 opacity-100'
-                : 'pointer-events-none -translate-y-full opacity-0'
-        "
-    >
+    <header class="fixed inset-x-0 top-0 z-40">
         <p
-            class="bg-brand-red px-4 py-1.5 text-center text-xs font-semibold uppercase tracking-wide text-white sm:text-sm"
+            class="relative z-20 bg-brand-red px-4 py-1.5 text-center text-xs font-semibold uppercase tracking-wide text-white sm:text-sm"
         >
             {{ shipping }}
         </p>
 
         <nav
-            class="transition-colors duration-300"
-            :class="
+            class="transition duration-500 ease-out"
+            :class="[
+                navVisible
+                    ? 'translate-y-0 opacity-100'
+                    : 'pointer-events-none -translate-y-full opacity-0',
                 navSolid
-                    ? 'border-b border-gray-100 bg-white/95 shadow-sm backdrop-blur'
-                    : 'bg-transparent'
-            "
+                    ? 'border-b border-gray-100 bg-white/95 shadow-xs backdrop-blur-sm'
+                    : 'bg-transparent',
+            ]"
             aria-label="Principal"
         >
             <div class="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-3 sm:px-6 lg:px-8">

@@ -52,7 +52,10 @@ class HandleInertiaRequests extends Middleware
                 'success' => $request->session()->get('success'),
                 'catalog' => $request->session()->get('catalog'),
                 'catalog_error' => $request->session()->get('catalog_error'),
+                'seasonal_catalog' => $request->session()->get('seasonal_catalog'),
             ],
+            'catalogModal' => old('catalogo'),
+            'oldEmail' => old('email'),
             'csrf_token' => csrf_token(),
             'ziggy' => fn () => [
                 ...(new Ziggy)->toArray(),

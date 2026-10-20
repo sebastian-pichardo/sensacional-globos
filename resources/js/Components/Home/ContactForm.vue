@@ -55,7 +55,7 @@ const submit = () => {
                         required
                         autocomplete="name"
                         :disabled="form.processing"
-                        class="mt-1 w-full rounded-lg border-gray-300 shadow-sm focus:border-brand-cyan focus:ring-brand-cyan disabled:opacity-60"
+                        class="mt-1 w-full rounded-lg border-gray-300 shadow-xs focus:border-brand-cyan focus:ring-brand-cyan disabled:opacity-60"
                     />
                     <InputError class="mt-1" :message="form.errors.name" />
                 </div>
@@ -71,7 +71,7 @@ const submit = () => {
                         required
                         autocomplete="email"
                         :disabled="form.processing"
-                        class="mt-1 w-full rounded-lg border-gray-300 shadow-sm focus:border-brand-cyan focus:ring-brand-cyan disabled:opacity-60"
+                        class="mt-1 w-full rounded-lg border-gray-300 shadow-xs focus:border-brand-cyan focus:ring-brand-cyan disabled:opacity-60"
                     />
                     <InputError class="mt-1" :message="form.errors.email" />
                 </div>
@@ -87,7 +87,7 @@ const submit = () => {
                         required
                         autocomplete="tel"
                         :disabled="form.processing"
-                        class="mt-1 w-full rounded-lg border-gray-300 shadow-sm focus:border-brand-cyan focus:ring-brand-cyan disabled:opacity-60"
+                        class="mt-1 w-full rounded-lg border-gray-300 shadow-xs focus:border-brand-cyan focus:ring-brand-cyan disabled:opacity-60"
                     />
                     <InputError class="mt-1" :message="form.errors.phone" />
                 </div>
@@ -102,7 +102,7 @@ const submit = () => {
                         type="text"
                         autocomplete="organization"
                         :disabled="form.processing"
-                        class="mt-1 w-full rounded-lg border-gray-300 shadow-sm focus:border-brand-cyan focus:ring-brand-cyan disabled:opacity-60"
+                        class="mt-1 w-full rounded-lg border-gray-300 shadow-xs focus:border-brand-cyan focus:ring-brand-cyan disabled:opacity-60"
                     />
                     <InputError class="mt-1" :message="form.errors.company" />
                 </div>
@@ -116,7 +116,7 @@ const submit = () => {
                         v-model="form.state"
                         required
                         :disabled="form.processing"
-                        class="mt-1 w-full rounded-lg border-gray-300 shadow-sm focus:border-brand-cyan focus:ring-brand-cyan disabled:opacity-60"
+                        class="mt-1 w-full rounded-lg border-gray-300 shadow-xs focus:border-brand-cyan focus:ring-brand-cyan disabled:opacity-60"
                     >
                         <option value="" disabled>Selecciona un estado</option>
                         <option v-for="state in states" :key="state" :value="state">
@@ -136,7 +136,7 @@ const submit = () => {
                         required
                         rows="5"
                         :disabled="form.processing"
-                        class="mt-1 w-full rounded-lg border-gray-300 shadow-sm focus:border-brand-cyan focus:ring-brand-cyan disabled:opacity-60"
+                        class="mt-1 w-full rounded-lg border-gray-300 shadow-xs focus:border-brand-cyan focus:ring-brand-cyan disabled:opacity-60"
                     />
                     <InputError class="mt-1" :message="form.errors.message" />
                 </div>

@@ -174,7 +174,7 @@ onUnmounted(() => {
                         >
                             <button
                                 type="button"
-                                class="group relative block w-full overflow-hidden bg-gray-100 shadow-md focus:outline-none focus:ring-2 focus:ring-brand-cyan focus:ring-offset-2"
+                                class="group relative block w-full overflow-hidden bg-gray-100 shadow-md focus:outline-hidden focus:ring-2 focus:ring-brand-cyan focus:ring-offset-2"
                                 :aria-label="`Ver en grande: ${image.alt}`"
                                 @click="open(globalIndexFor(techniqueIndex, imageIndex))"
                             >

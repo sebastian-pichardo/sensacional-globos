@@ -46,7 +46,7 @@ const submit = () => {
                         type="text"
                         required
                         autocomplete="name"
-                        class="mt-1 w-full rounded-lg border-gray-300 shadow-sm focus:border-brand-cyan focus:ring-brand-cyan"
+                        class="mt-1 w-full rounded-lg border-gray-300 shadow-xs focus:border-brand-cyan focus:ring-brand-cyan"
                     />
                     <InputError class="mt-1" :message="form.errors.name" />
                 </div>
@@ -61,7 +61,7 @@ const submit = () => {
                         type="tel"
                         required
                         autocomplete="tel"
-                        class="mt-1 w-full rounded-lg border-gray-300 shadow-sm focus:border-brand-cyan focus:ring-brand-cyan"
+                        class="mt-1 w-full rounded-lg border-gray-300 shadow-xs focus:border-brand-cyan focus:ring-brand-cyan"
                     />
                     <InputError class="mt-1" :message="form.errors.whatsapp" />
                 </div>
@@ -76,7 +76,7 @@ const submit = () => {
                         type="email"
                         required
                         autocomplete="email"
-                        class="mt-1 w-full rounded-lg border-gray-300 shadow-sm focus:border-brand-cyan focus:ring-brand-cyan"
+                        class="mt-1 w-full rounded-lg border-gray-300 shadow-xs focus:border-brand-cyan focus:ring-brand-cyan"
                     />
                     <InputError class="mt-1" :message="form.errors.email" />
                 </div>
@@ -90,7 +90,7 @@ const submit = () => {
                         v-model="form.motivation"
                         required
                         rows="4"
-                        class="mt-1 w-full rounded-lg border-gray-300 shadow-sm focus:border-brand-cyan focus:ring-brand-cyan"
+                        class="mt-1 w-full rounded-lg border-gray-300 shadow-xs focus:border-brand-cyan focus:ring-brand-cyan"
                     />
                     <InputError class="mt-1" :message="form.errors.motivation" />
                 </div>
@@ -105,7 +105,7 @@ const submit = () => {
                         v-model="form.social_networks"
                         type="text"
                         placeholder="Instagram, Facebook, TikTok…"
-                        class="mt-1 w-full rounded-lg border-gray-300 shadow-sm focus:border-brand-cyan focus:ring-brand-cyan"
+                        class="mt-1 w-full rounded-lg border-gray-300 shadow-xs focus:border-brand-cyan focus:ring-brand-cyan"
                     />
                     <InputError class="mt-1" :message="form.errors.social_networks" />
                 </div>
@@ -120,7 +120,7 @@ const submit = () => {
                         type="text"
                         required
                         autocomplete="address-level1"
-                        class="mt-1 w-full rounded-lg border-gray-300 shadow-sm focus:border-brand-cyan focus:ring-brand-cyan"
+                        class="mt-1 w-full rounded-lg border-gray-300 shadow-xs focus:border-brand-cyan focus:ring-brand-cyan"
                     />
                     <InputError class="mt-1" :message="form.errors.city_or_state" />
                 </div>
@@ -130,7 +130,7 @@ const submit = () => {
                         id="inspirate-promotions"
                         v-model="form.accept_promotions"
                         type="checkbox"
-                        class="mt-1 rounded border-gray-300 text-brand-red shadow-sm focus:ring-brand-cyan"
+                        class="mt-1 rounded-sm border-gray-300 text-brand-red shadow-xs focus:ring-brand-cyan"
                     />
                     <label for="inspirate-promotions" class="text-sm leading-relaxed text-gray-700">
                         Acepto recibir información promocional, dinámicas y ofertas en mis medios de

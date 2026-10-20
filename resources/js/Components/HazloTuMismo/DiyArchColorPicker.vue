@@ -145,7 +145,7 @@ const gradientC = computed(() => ({
                             :aria-selected="isSelected(group.key, swatch)"
                             :title="swatch.nombre"
                             :aria-label="swatch.nombre"
-                            class="group relative h-11 w-11 rounded-full transition hover:scale-105 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-orange focus-visible:ring-offset-2"
+                            class="group relative h-11 w-11 rounded-full transition hover:scale-105 focus:outline-hidden focus-visible:ring-2 focus-visible:ring-brand-orange focus-visible:ring-offset-2"
                             :class="
                                 isSelected(group.key, swatch)
                                     ? 'ring-[3px] ring-gray-900 ring-offset-2'
@@ -155,7 +155,7 @@ const gradientC = computed(() => ({
                             @click="selectColor(group.key, swatch)"
                         >
                             <span
-                                class="pointer-events-none absolute bottom-full left-1/2 z-10 mb-2 -translate-x-1/2 whitespace-nowrap rounded bg-gray-900 px-2 py-1 text-[11px] font-semibold uppercase tracking-wide text-white opacity-0 shadow transition group-hover:opacity-100 group-focus-visible:opacity-100"
+                                class="pointer-events-none absolute bottom-full left-1/2 z-10 mb-2 -translate-x-1/2 whitespace-nowrap rounded-sm bg-gray-900 px-2 py-1 text-[11px] font-semibold uppercase tracking-wide text-white opacity-0 shadow-sm transition group-hover:opacity-100 group-focus-visible:opacity-100"
                             >
                                 {{ swatch.nombre }}
                             </span>

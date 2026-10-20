@@ -45,7 +45,7 @@ const benefits = [
                 <li
                     v-for="benefit in benefits"
                     :key="benefit.title"
-                    class="flex items-start gap-3 rounded-2xl bg-white p-5 shadow-sm ring-1 ring-black/5"
+                    class="flex items-start gap-3 rounded-2xl bg-white p-5 shadow-xs ring-1 ring-black/5"
                     :class="benefit.title === 'Envíos a todo México' ? 'sm:col-span-2' : ''"
                 >
                     <span

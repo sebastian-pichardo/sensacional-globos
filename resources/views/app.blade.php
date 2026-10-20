@@ -24,6 +24,10 @@
 
         <!-- Scripts -->
 
+        <!-- facebook -->
+        <meta name="facebook-domain-verification" content="ikhgqkxm4r4bq0n9vh4qc5e6hxs4uf" />
+        <!-- facebook -->
+
         <!-- TikTok Pixel Code Start -->
         <script>
             !function (w, d, t) {

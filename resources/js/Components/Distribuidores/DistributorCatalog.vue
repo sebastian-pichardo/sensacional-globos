@@ -48,7 +48,7 @@ const csrf = computed(() => page.props.csrf_token || '');
                     name="clave"
                     required
                     autocomplete="off"
-                    class="mt-1 w-full rounded-lg border-gray-300 shadow-sm focus:border-brand-cyan focus:ring-brand-cyan"
+                    class="mt-1 w-full rounded-lg border-gray-300 shadow-xs focus:border-brand-cyan focus:ring-brand-cyan"
                 />
                 <button
                     type="submit"

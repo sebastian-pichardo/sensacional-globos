@@ -4,7 +4,7 @@
         aria-labelledby="trabajos-titulo"
     >
         <div
-            class="absolute inset-0 bg-gradient-to-b from-brand-yellow/10 via-transparent to-brand-cyan/10"
+            class="absolute inset-0 bg-linear-to-b from-brand-yellow/10 via-transparent to-brand-cyan/10"
             aria-hidden="true"
         />
         <div
@@ -25,7 +25,7 @@
             </h2>
 
             <div
-                class="mt-12 flex min-h-[220px] flex-col items-center justify-center rounded-3xl border-2 border-dashed border-brand-cyan/50 bg-gradient-to-br from-brand-cyan/10 via-white to-brand-purple/10 px-6 py-14 text-center"
+                class="mt-12 flex min-h-[220px] flex-col items-center justify-center rounded-3xl border-2 border-dashed border-brand-cyan/50 bg-linear-to-br from-brand-cyan/10 via-white to-brand-purple/10 px-6 py-14 text-center"
             >
                 <div class="mb-4 flex gap-2" aria-hidden="true">
                     <span class="h-3 w-3 rounded-full bg-brand-red" />

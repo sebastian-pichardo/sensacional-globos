@@ -11,7 +11,7 @@ const highlights = [
 <template>
     <section class="relative overflow-hidden" aria-labelledby="productos-titulo">
         <div
-            class="absolute inset-0 bg-gradient-to-br from-brand-cyan/25 via-brand-yellow/20 to-brand-orange/25"
+            class="absolute inset-0 bg-linear-to-br from-brand-cyan/25 via-brand-yellow/20 to-brand-orange/25"
             aria-hidden="true"
         />
         <div

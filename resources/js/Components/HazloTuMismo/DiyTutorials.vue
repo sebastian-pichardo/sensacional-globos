@@ -88,7 +88,7 @@ const goTo = (index) => {
                 <div class="mt-8 flex items-center justify-center gap-4">
                     <button
                         type="button"
-                        class="rounded-full bg-brand-cyan p-3 text-white shadow transition hover:bg-brand-orange focus:outline-none focus:ring-2 focus:ring-brand-cyan focus:ring-offset-2"
+                        class="rounded-full bg-brand-cyan p-3 text-white shadow-sm transition hover:bg-brand-orange focus:outline-hidden focus:ring-2 focus:ring-brand-cyan focus:ring-offset-2"
                         aria-label="Tutoriales anteriores"
                         @click="prev"
                     >
@@ -117,7 +117,7 @@ const goTo = (index) => {
 
                     <button
                         type="button"
-                        class="rounded-full bg-brand-cyan p-3 text-white shadow transition hover:bg-brand-orange focus:outline-none focus:ring-2 focus:ring-brand-cyan focus:ring-offset-2"
+                        class="rounded-full bg-brand-cyan p-3 text-white shadow-sm transition hover:bg-brand-orange focus:outline-hidden focus:ring-2 focus:ring-brand-cyan focus:ring-offset-2"
                         aria-label="Tutoriales siguientes"
                         @click="next"
                     >

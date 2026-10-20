@@ -51,7 +51,7 @@ const types = [
                 <article
                     v-for="type in types"
                     :key="type.title"
-                    class="flex flex-col rounded-2xl border-t-8 bg-gray-50 p-6 shadow-sm"
+                    class="flex flex-col rounded-2xl border-t-8 bg-gray-50 p-6 shadow-xs"
                     :class="type.color"
                 >
                     <span

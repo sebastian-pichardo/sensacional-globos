@@ -107,7 +107,7 @@ const irAPagina = (numero) => {
             <select
                 id="estado-distribuidor"
                 v-model="estadoClave"
-                class="mt-1 w-full rounded-lg border-gray-300 shadow-sm focus:border-brand-cyan focus:ring-brand-cyan"
+                class="mt-1 w-full rounded-lg border-gray-300 shadow-xs focus:border-brand-cyan focus:ring-brand-cyan"
             >
                 <option value="" disabled>Selecciona un estado</option>
                 <option
@@ -123,13 +123,13 @@ const irAPagina = (numero) => {
                 Elige un estado para mostrar la lista de distribuidores.
             </p>
 
-            <!-- rounded-3xl border-t-8 bg-gray-50 p-5 shadow-sm -->
+            <!-- rounded-3xl border-t-8 bg-gray-50 p-5 shadow-xs -->
             <div v-else-if="resultados.length" class="mt-8" aria-live="polite">
                 <ul class="space-y-4">
                     <li
                         v-for="distribuidor in paginaActual"
                         :key="distribuidor.id"
-                        class="rounded-3xl bg-gray-50 p-5 shadow-sm ring-1 ring-black/5 sm:p-6"
+                        class="rounded-3xl bg-gray-50 p-5 shadow-xs ring-1 ring-black/5 sm:p-6"
                     >
                         <div class="flex gap-4 sm:gap-5">
                             <img

@@ -56,7 +56,7 @@ const ecoHighlights = [
 
         <div class="relative z-[1] mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
             <div
-                class="rounded-[2rem] bg-gradient-to-br from-white/95 via-white/90 to-brand-yellow/25 p-6 shadow-xl ring-1 ring-white/70 sm:p-10"
+                class="rounded-[2rem] bg-linear-to-br from-white/95 via-white/90 to-brand-yellow/25 p-6 shadow-xl ring-1 ring-white/70 sm:p-10"
             >
                 <div class="mx-auto max-w-3xl text-center">
                     <img

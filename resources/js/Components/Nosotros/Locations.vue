@@ -189,7 +189,7 @@ const mapsLink = (query) =>
 
                     <button
                         type="button"
-                        class="absolute left-3 top-1/2 z-10 -translate-y-1/2 rounded-full bg-white/85 p-2 text-gray-900 shadow transition hover:bg-brand-yellow sm:left-4"
+                        class="absolute left-3 top-1/2 z-10 -translate-y-1/2 rounded-full bg-white/85 p-2 text-gray-900 shadow-sm transition hover:bg-brand-yellow sm:left-4"
                         aria-label="Imagen anterior de la fábrica"
                         @click="prev"
                     >
@@ -199,7 +199,7 @@ const mapsLink = (query) =>
                     </button>
                     <button
                         type="button"
-                        class="absolute right-3 top-1/2 z-10 -translate-y-1/2 rounded-full bg-white/85 p-2 text-gray-900 shadow transition hover:bg-brand-yellow sm:right-4"
+                        class="absolute right-3 top-1/2 z-10 -translate-y-1/2 rounded-full bg-white/85 p-2 text-gray-900 shadow-sm transition hover:bg-brand-yellow sm:right-4"
                         aria-label="Imagen siguiente de la fábrica"
                         @click="next"
                     >
@@ -222,7 +222,7 @@ const mapsLink = (query) =>
                     </div>
                 </div>
                 <figcaption
-                    class="bg-gradient-to-r from-brand-purple via-brand-red to-brand-orange px-6 py-4 text-center text-sm font-bold text-white"
+                    class="bg-linear-to-r from-brand-purple via-brand-red to-brand-orange px-6 py-4 text-center text-sm font-bold text-white"
                 >
                     Un poquito de nuestra historia.
                 </figcaption>

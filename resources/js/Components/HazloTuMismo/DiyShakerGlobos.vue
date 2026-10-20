@@ -359,9 +359,9 @@ async function guardar() {
                             v-for="globo in globos"
                             :key="globo.id"
                             type="button"
-                            class="rounded-2xl border px-3 py-3 text-left transition focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-orange"
+                            class="rounded-2xl border px-3 py-3 text-left transition focus:outline-hidden focus-visible:ring-2 focus-visible:ring-brand-orange"
                             :class="esGloboActivo(globo)
-                                ? 'border-brand-orange bg-orange-50 shadow-sm'
+                                ? 'border-brand-orange bg-orange-50 shadow-xs'
                                 : 'border-gray-200 bg-white hover:border-brand-orange/50'"
                             :aria-pressed="esGloboActivo(globo)"
                             @click="activarGlobo(globo)"
@@ -404,7 +404,7 @@ async function guardar() {
                                 :aria-selected="esColorActivo(color)"
                                 :title="color.nombre"
                                 :aria-label="color.nombre"
-                                class="group relative h-11 w-11 justify-self-center rounded-full transition hover:scale-105 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-orange focus-visible:ring-offset-2"
+                                class="group relative h-11 w-11 justify-self-center rounded-full transition hover:scale-105 focus:outline-hidden focus-visible:ring-2 focus-visible:ring-brand-orange focus-visible:ring-offset-2"
                                 :class="esColorActivo(color)
                                     ? 'ring-[3px] ring-gray-900 ring-offset-2'
                                     : 'ring-1 ring-black/10'"
@@ -412,7 +412,7 @@ async function guardar() {
                                 @click="elegirColor(color)"
                             >
                                 <span
-                                    class="pointer-events-none absolute bottom-full left-1/2 z-10 mb-2 -translate-x-1/2 whitespace-nowrap rounded bg-gray-900 px-2 py-1 text-[11px] font-semibold text-white opacity-0 shadow transition group-hover:opacity-100 group-focus-visible:opacity-100"
+                                    class="pointer-events-none absolute bottom-full left-1/2 z-10 mb-2 -translate-x-1/2 whitespace-nowrap rounded-sm bg-gray-900 px-2 py-1 text-[11px] font-semibold text-white opacity-0 shadow-sm transition group-hover:opacity-100 group-focus-visible:opacity-100"
                                 >
                                     {{ color.nombre }}
                                 </span>
@@ -445,7 +445,7 @@ async function guardar() {
 
                         <button
                             type="button"
-                            class="mt-4 inline-flex items-center justify-center rounded-full bg-brand-orange px-6 py-3 text-sm font-bold text-white transition hover:brightness-95 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-orange focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
+                            class="mt-4 inline-flex items-center justify-center rounded-full bg-brand-orange px-6 py-3 text-sm font-bold text-white transition hover:brightness-95 focus:outline-hidden focus-visible:ring-2 focus-visible:ring-brand-orange focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
                             :disabled="!puedeGuardar"
                             @click="guardar"
                         >

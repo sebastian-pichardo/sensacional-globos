@@ -30,7 +30,7 @@ const chapters = [
 <template>
     <section class="relative overflow-hidden" aria-labelledby="historia-titulo">
         <div
-            class="absolute inset-0 bg-gradient-to-br from-brand-cyan/25 via-brand-yellow/20 to-brand-orange/25"
+            class="absolute inset-0 bg-linear-to-br from-brand-cyan/25 via-brand-yellow/20 to-brand-orange/25"
             aria-hidden="true"
         />
         <div
@@ -80,7 +80,7 @@ const chapters = [
                 <article
                     v-for="chapter in chapters"
                     :key="chapter.label"
-                    class="overflow-hidden rounded-3xl bg-white/90 shadow-lg ring-1 ring-black/5 backdrop-blur"
+                    class="overflow-hidden rounded-3xl bg-white/90 shadow-lg ring-1 ring-black/5 backdrop-blur-sm"
                 >
                     <div class="flex">
                         <div :class="chapter.accent" class="w-2 shrink-0 sm:w-3" />

@@ -1,11 +1,46 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+
+@plugin "@tailwindcss/forms";
+
+@source "../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php";
+@source "../views/**/*.blade.php";
+@source "../js/**/*.vue";
+@source "../js/**/*.js";
+
+@theme {
+    --font-sans: "Figtree", ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji",
+        "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+
+    --color-brand-red: #e30613;
+    --color-brand-green: #95c11f;
+    --color-brand-cyan: #32bef0;
+    --color-brand-yellow: #ffcc00;
+    --color-brand-orange: #f39200;
+    --color-brand-purple: #951b81;
+}
+
+/*
+ * En Tailwind 4 el borde por defecto es currentColor.
+ * Se recupera el gris de la versión 3 para que inputs y separadores no se vean negros.
+ */
+@layer base {
+    *,
+    ::after,
+    ::before,
+    ::backdrop,
+    ::file-selector-button {
+        border-color: var(--color-gray-200, currentColor);
+    }
+}
 
 @layer components {
     .news-balloon {
-        @apply relative flex h-56 w-56 items-center justify-center p-8 text-center text-sm font-semibold leading-snug shadow-xl sm:h-64 sm:w-64 sm:text-base;
+        @apply relative flex h-56 w-56 items-center justify-center p-8 text-center text-sm font-semibold leading-snug shadow-xl;
         border-radius: 50%;
+
+        @variant sm {
+            @apply h-64 w-64 text-base;
+        }
     }
 
     .news-balloon-knot {

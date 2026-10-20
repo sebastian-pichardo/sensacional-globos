@@ -276,10 +276,10 @@ onMounted(async () => {
                             v-for="tipo in tiposGlobo"
                             :key="tipo.id"
                             type="button"
-                            class="flex w-full items-center gap-4 rounded-2xl border px-4 py-3 text-left transition focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-orange"
+                            class="flex w-full items-center gap-4 rounded-2xl border px-4 py-3 text-left transition focus:outline-hidden focus-visible:ring-2 focus-visible:ring-brand-orange"
                             :class="
                                 esMedidaActiva(tipo)
-                                    ? 'border-brand-orange bg-orange-50 shadow-sm'
+                                    ? 'border-brand-orange bg-orange-50 shadow-xs'
                                     : 'border-gray-200 bg-white hover:border-brand-orange/50'
                             "
                             :aria-pressed="esMedidaActiva(tipo)"
@@ -322,7 +322,7 @@ onMounted(async () => {
                                 :aria-selected="esColorActivo(color)"
                                 :title="color.nombre"
                                 :aria-label="color.nombre"
-                                class="group relative h-11 w-11 rounded-full transition hover:scale-105 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-orange focus-visible:ring-offset-2"
+                                class="group relative h-11 w-11 rounded-full transition hover:scale-105 focus:outline-hidden focus-visible:ring-2 focus-visible:ring-brand-orange focus-visible:ring-offset-2"
                                 :class="
                                     esColorActivo(color)
                                         ? 'ring-[3px] ring-gray-900 ring-offset-2'
@@ -332,7 +332,7 @@ onMounted(async () => {
                                 @click="elegirColor(color)"
                             >
                                 <span
-                                    class="pointer-events-none absolute bottom-full left-1/2 z-10 mb-2 -translate-x-1/2 whitespace-nowrap rounded bg-gray-900 px-2 py-1 text-[11px] font-semibold text-white opacity-0 shadow transition group-hover:opacity-100 group-focus-visible:opacity-100"
+                                    class="pointer-events-none absolute bottom-full left-1/2 z-10 mb-2 -translate-x-1/2 whitespace-nowrap rounded-sm bg-gray-900 px-2 py-1 text-[11px] font-semibold text-white opacity-0 shadow-sm transition group-hover:opacity-100 group-focus-visible:opacity-100"
                                 >
                                     {{ color.nombre }}
                                 </span>

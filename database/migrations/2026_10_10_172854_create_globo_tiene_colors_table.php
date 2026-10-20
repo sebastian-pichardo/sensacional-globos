@@ -25,7 +25,7 @@ return new class extends Migration
                 ->on('colores')
                 ->onUpdate('cascade')
                 ->onDelete('cascade');
-            $table->string('globo_imagen', 355);
+            $table->string('globo_imagen', 355)->nullable();
             $table->string('color')->nullable();
             $table->string('color_imagen', 355)->nullable();
             $table->softDeletes();

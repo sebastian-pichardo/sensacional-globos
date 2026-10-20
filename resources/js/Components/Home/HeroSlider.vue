@@ -140,7 +140,7 @@ onUnmounted(() => {
         <template v-if="hasMultiple">
             <button
                 type="button"
-                class="absolute left-2 top-1/2 z-10 -translate-y-1/2 rounded-full bg-white/80 p-2 text-gray-900 shadow hover:bg-brand-yellow sm:left-4"
+                class="absolute left-2 top-1/2 z-10 -translate-y-1/2 rounded-full bg-white/80 p-2 text-gray-900 shadow-sm hover:bg-brand-yellow sm:left-4"
                 aria-label="Producto anterior"
                 @click="prev"
             >
@@ -150,7 +150,7 @@ onUnmounted(() => {
             </button>
             <button
                 type="button"
-                class="absolute right-2 top-1/2 z-10 -translate-y-1/2 rounded-full bg-white/80 p-2 text-gray-900 shadow hover:bg-brand-yellow sm:right-4"
+                class="absolute right-2 top-1/2 z-10 -translate-y-1/2 rounded-full bg-white/80 p-2 text-gray-900 shadow-sm hover:bg-brand-yellow sm:right-4"
                 aria-label="Producto siguiente"
                 @click="next"
             >

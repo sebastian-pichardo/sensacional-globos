@@ -41,6 +41,9 @@ Route::post('/newsletter', [NewsletterController::class, 'store'])
     ->middleware('throttle:10,1')
     ->name('newsletter.store');
 Route::get('/catalogo/descargar', [CatalogController::class, 'download'])->name('catalogo.descargar');
+Route::post('/catalogo/solicitar', [CatalogController::class, 'downloadRequested'])
+    ->middleware('throttle:10,1')
+    ->name('catalogo.solicitar');
 
 Route::get('/robots.txt', [SeoController::class, 'robots'])->name('robots');
 Route::get('/sitemap.xml', [SeoController::class, 'sitemap'])->name('sitemap');

@@ -23,7 +23,7 @@ const description = computed(
             <meta property="og:description" :content="description" />
         </Head>
 
-        <section class="flex min-h-[70vh] items-center bg-gradient-to-b from-brand-cyan/20 to-white px-4 pt-32 pb-16">
+        <section class="flex min-h-[70vh] items-center bg-linear-to-b from-brand-cyan/20 to-white px-4 pt-32 pb-16">
             <div class="mx-auto max-w-2xl text-center">
                 <p class="text-xs font-bold uppercase tracking-[0.2em] text-brand-red">
                     {{ shipping }}

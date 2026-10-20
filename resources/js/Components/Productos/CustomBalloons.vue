@@ -92,7 +92,7 @@ const steps = [
                 <li
                     v-for="step in steps"
                     :key="step.number"
-                    class="relative rounded-3xl bg-gray-50 p-6 shadow-sm ring-1 ring-black/5"
+                    class="relative rounded-3xl bg-gray-50 p-6 shadow-xs ring-1 ring-black/5"
                 >
                     <span
                         :class="step.color"

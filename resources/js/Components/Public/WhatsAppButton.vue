@@ -13,7 +13,7 @@ const url = computed(
         :href="url"
         target="_blank"
         rel="noopener noreferrer"
-        class="fixed bottom-5 right-4 z-40 flex h-14 w-14 items-center justify-center rounded-full bg-[#25D366] text-white shadow-lg transition hover:scale-105 hover:bg-[#1ebe57] focus:outline-none focus:ring-2 focus:ring-brand-green focus:ring-offset-2 sm:h-16 sm:w-16"
+        class="fixed bottom-5 right-4 z-40 flex h-14 w-14 items-center justify-center rounded-full bg-[#25D366] text-white shadow-lg transition hover:scale-105 hover:bg-[#1ebe57] focus:outline-hidden focus:ring-2 focus:ring-brand-green focus:ring-offset-2 sm:h-16 sm:w-16"
         aria-label="Chatear por WhatsApp"
     >
         <svg

@@ -70,7 +70,7 @@ const productHref = (name) => `${route('productos')}#${encodeURIComponent(name)}
                     v-for="line in lines"
                     :key="line.name"
                     :href="productHref(line.name)"
-                    class="flex h-full flex-col overflow-hidden rounded-2xl bg-white shadow-md transition hover:-translate-y-1 hover:shadow-xl focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-cyan"
+                    class="flex h-full flex-col overflow-hidden rounded-2xl bg-white shadow-md transition hover:-translate-y-1 hover:shadow-xl focus:outline-hidden focus-visible:ring-2 focus-visible:ring-brand-cyan"
                 >
                     <article class="flex h-full flex-col">
                         <div class="flex flex-1 items-center justify-center bg-white p-6">
