@@ -168,22 +168,18 @@ function colorDe(globo) {
 }
 
 /**
- * @param {string} imagenUrl
- * @param {string} hexadecimal
+ * @param {GloboCapa} globo
  */
-function estiloTinte(imagenUrl, hexadecimal) {
-    const mascara = `url("${imagenUrl}")`;
+function estiloMascara(globo) {
+    const mascara = `url('/img/productos/${globo.imagen}')`;
 
     return {
-        backgroundColor: hexadecimal,
         maskImage: mascara,
         WebkitMaskImage: mascara,
         maskSize: '100% 100%',
         WebkitMaskSize: '100% 100%',
         maskRepeat: 'no-repeat',
         WebkitMaskRepeat: 'no-repeat',
-        maskPosition: 'center',
-        WebkitMaskPosition: 'center',
     };
 }
 
@@ -295,30 +291,29 @@ async function guardar() {
                         <div
                             v-for="globo in globos"
                             :key="globo.id"
-                            class="pointer-events-none absolute inset-0 isolate"
+                            class="capa-globo pointer-events-none absolute inset-0 isolate"
+                            :style="estiloMascara(globo)"
                         >
-                            <template v-if="globo.imagen_url && colorDe(globo)">
-                                <img
-                                    :src="globo.imagen_url"
-                                    alt=""
-                                    class="absolute inset-0 h-full w-full"
-                                    draggable="false"
-                                />
+                            <template v-if="globo.imagen && colorDe(globo)">
+                                <!-- Elemento 1: Tinte base -->
                                 <div
-                                    class="absolute inset-0 opacity-90 mix-blend-multiply"
-                                    :style="estiloTinte(globo.imagen_url, colorDe(globo).hexadecimal)"
+                                    class="absolute inset-0 w-full h-full"
+                                    :style="{ backgroundColor: colorDe(globo).hexadecimal }"
                                 />
+                                <!-- Elemento 2: Cuerpo y Sombras -->
                                 <img
-                                    :src="globo.imagen_url"
+                                    :src="'/img/productos/' + globo.imagen"
                                     alt=""
-                                    class="absolute inset-0 h-full w-full opacity-40 mix-blend-soft-light"
-                                    style="filter: contrast(1.15)"
+                                    class="capa-globo-sombras absolute inset-0 w-full h-full object-cover pointer-events-none"
+                                    style="mix-blend-mode: multiply; filter: contrast(1.2) brightness(1.05)"
                                     draggable="false"
                                 />
+                                <!-- Elemento 3: Brillos especulares blancos -->
                                 <img
-                                    :src="globo.imagen_url"
+                                    :src="'/img/productos/' + globo.imagen"
                                     alt=""
-                                    class="absolute inset-0 h-full w-full opacity-20 mix-blend-screen"
+                                    class="capa-globo-brillos absolute inset-0 w-full h-full object-cover pointer-events-none"
+                                    style="mix-blend-mode: screen; opacity: 0.8; filter: contrast(2) brightness(1.25)"
                                     draggable="false"
                                 />
                             </template>
@@ -464,3 +459,25 @@ async function guardar() {
         </div>
     </section>
 </template>
+
+<style scoped>
+.capa-globo {
+    position: absolute;
+    inset: 0;
+    mask-size: 100% 100%;
+    -webkit-mask-size: 100% 100%;
+    mask-repeat: no-repeat;
+    -webkit-mask-repeat: no-repeat;
+}
+
+.capa-globo-sombras {
+    mix-blend-mode: multiply;
+    filter: contrast(1.2) brightness(1.05);
+}
+
+.capa-globo-brillos {
+    mix-blend-mode: screen;
+    opacity: 0.8;
+    filter: contrast(2) brightness(1.25);
+}
+</style>
