@@ -9,6 +9,7 @@ use App\Http\Controllers\InspirateController;
 use App\Http\Controllers\LeadController;
 use App\Http\Controllers\NewsletterController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\PromocionController;
 use App\Http\Controllers\SeoController;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
@@ -32,6 +33,12 @@ Route::post('/api/diy-globos/guardar-seleccion', [DiyGloboController::class, 'gu
     ->middleware('throttle:20,1')
     ->name('diy-globos.guardar-seleccion');
 Route::get('/aviso-de-privacidad', [HomeController::class, 'avisoPrivacidad'])->name('aviso-de-privacidad');
+
+Route::get('/promociones-halloween-2026', [PromocionController::class, 'index'])
+    ->name('promociones-halloween-2026');
+Route::post('/promociones-halloween-2026', [PromocionController::class, 'store'])
+    ->middleware('throttle:10,1')
+    ->name('promociones-halloween-2026.store');
 
 Route::post('/leads', [LeadController::class, 'store'])->name('leads.store');
 Route::post('/contacto', [ContactController::class, 'store'])

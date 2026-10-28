@@ -222,6 +222,14 @@
   "resources/js/Pages/Profile/Partials/UpdateProfileInformationForm.vue": [
     "/build/assets/UpdateProfileInformationForm-CJ9XAHY3.js"
   ],
+  "resources/js/Pages/PromocionesHalloween2026.vue": [
+    "/build/assets/PromocionesHalloween2026-CmUWK0A3.js",
+    "/build/assets/PromocionesHalloween2026-BRShWEw6.css"
+  ],
+  "resources/js/Pages/PromocionesHalloween2026.vue?vue&type=style&index=0&scoped=759b69c4&lang.css": [
+    "/build/assets/PromocionesHalloween2026-CmUWK0A3.js",
+    "/build/assets/PromocionesHalloween2026-BRShWEw6.css"
+  ],
   "resources/js/Pages/Welcome.vue": [
     "/build/assets/Welcome-B_OFjUa9.js"
   ],
