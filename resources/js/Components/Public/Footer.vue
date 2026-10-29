@@ -8,6 +8,7 @@ const shipping = computed(() => page.props.brand?.shipping ?? 'EnvÃ­os a todo MÃ
 const social = computed(() => page.props.brand?.social ?? {});
 
 const links = [
+    { label: 'Promociones Halloween', route: 'promociones-halloween-2026' },
     { label: 'Nosotros', route: 'nosotros' },
     { label: 'Productos', route: 'productos' },
     { label: 'Encuentra un distribuidor', route: 'encuentra-un-distribuidor' },

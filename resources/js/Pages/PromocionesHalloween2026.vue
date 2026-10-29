@@ -196,8 +196,8 @@ const submit = () => {
         </Head>
 
         <section
-            class="relative min-h-screen overflow-hidden bg-white bg-repeat pt-32 pb-24 sm:pt-36"
-            style="background-image: url('/img/productos/trama.jpg'); background-size: 640px auto;"
+            class="relative min-h-screen overflow-hidden bg-white bg-repeat pt-32 pb-0 sm:pt-36"
+            style="background-image: url('/img/productos/fondo-promcion.jpeg'); background-size: 640px auto;"
         >
             <div class="relative z-10 mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
                 <!-- Portada centrada y texto animado de Globoween 2 -->
@@ -333,9 +333,9 @@ const submit = () => {
                     {{ $page.props.flash.success }}
                 </div>
 
-                <!-- Formulario de votación -->
+                <!-- Formulario de votación, superpuesto a la escena inferior -->
                 <form
-                    class="mx-auto mt-10 max-w-3xl space-y-5 sm:mt-12"
+                    class="halloween-form relative z-20 mx-auto max-w-3xl space-y-5"
                     novalidate
                     @submit.prevent="submit"
                 >
@@ -494,7 +494,7 @@ const submit = () => {
                         <div class="w-full flex-1">
                             <label
                                 for="accept-terms"
-                                class="inline-flex items-center gap-3 rounded-2xl px-3 py-2 transition"
+                                class="inline-flex items-center gap-3 rounded-2xl bg-white px-3 py-2 shadow-sm transition"
                                 :class="
                                     allPlacesSelected
                                         ? 'cursor-pointer text-gray-800'
@@ -549,42 +549,13 @@ const submit = () => {
                 </form>
             </div>
 
-            <!-- Decoración esquina inferior izquierda (Tumba Halloween) -->
-            <div
-                class="pointer-events-none absolute bottom-0 left-0 z-0 hidden w-44 opacity-95 select-none md:block lg:w-56"
-                aria-hidden="true"
-            >
-                <svg viewBox="0 0 220 200" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M12 195V130M4 150L22 140M4 165L20 156" stroke="#2c124d" stroke-width="2.5" stroke-linecap="round" />
-                    <rect x="68" y="20" width="10" height="36" rx="2" fill="#2c124d" />
-                    <rect x="57" y="30" width="32" height="9" rx="2" fill="#2c124d" />
-                    <path
-                        d="M35 105C35 68 55 52 80 52C105 52 125 68 125 105V196H35V105Z"
-                        fill="#3b0a68"
-                        stroke="#6b1a9b"
-                        stroke-width="4"
-                    />
-                    <circle cx="95" cy="188" r="42" fill="#f9fafb" stroke="#e5e7eb" stroke-width="2" />
-                    <circle cx="96" cy="186" r="14" fill="#65a30d" />
-                    <circle cx="96" cy="186" r="6" fill="#1e1b4b" />
-                </svg>
-            </div>
-
-            <!-- Decoración esquina inferior derecha (Calabaza Halloween) -->
-            <div
-                class="pointer-events-none absolute right-0 bottom-0 z-0 hidden w-48 opacity-95 select-none md:block lg:w-64"
-                aria-hidden="true"
-            >
-                <svg viewBox="0 0 260 160" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M242 155V95M236 105L242 92L248 105" stroke="#2c124d" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" />
-                    <path d="M125 46C125 32 136 22 145 25C142 35 140 42 140 50" stroke="#7c2d12" stroke-width="8" stroke-linecap="round" />
-                    <ellipse cx="95" cy="125" rx="45" ry="58" fill="#ea580c" />
-                    <ellipse cx="165" cy="125" rx="45" ry="58" fill="#ea580c" />
-                    <ellipse cx="130" cy="122" rx="48" ry="64" fill="#f97316" />
-                    <polygon points="98,108 112,86 122,110" fill="#6b1a9b" />
-                    <polygon points="138,110 150,86 164,108" fill="#6b1a9b" />
-                    <polygon points="124,126 130,114 136,126" fill="#6b1a9b" />
-                </svg>
+            <!-- Escena a todo el ancho: sube detrás del formulario y queda sobre el pie de página -->
+            <div class="halloween-scene pointer-events-none relative z-0 w-full select-none" aria-hidden="true">
+                <img
+                    src="/img/productos/fondo-halloween.png"
+                    alt=""
+                    class="block h-auto w-full max-w-none"
+                />
             </div>
         </section>
 
@@ -771,6 +742,34 @@ const submit = () => {
 
 .globoween-pulse-badge {
     animation: globoweenPulseBadge 3s ease-in-out infinite;
+}
+
+.halloween-form {
+    margin-top: 2.5rem;
+}
+
+.halloween-scene {
+    margin-top: -3.5rem;
+}
+
+@media (min-width: 640px) {
+    .halloween-form {
+        margin-top: 3rem;
+    }
+
+    .halloween-scene {
+        margin-top: -10rem;
+    }
+}
+
+@media (min-width: 1024px) {
+    .halloween-form {
+        margin-top: clamp(3rem, calc(26vw - 20rem), 18rem);
+    }
+
+    .halloween-scene {
+        margin-top: clamp(-40rem, -26vw, -16rem);
+    }
 }
 </style>
 
