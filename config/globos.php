@@ -63,6 +63,15 @@ return [
     ],
     'slides' => [
         [
+            'image' => '/img/productos/slider-globoween-octubre-2026.webp',
+            'imageMobile' => '/img/productos/slider-globoween-promociones-globossensacional.webp',
+            'name' => '',
+            'sku' => '',
+            'description' => '',
+            'alt' => 'Globos Sensacionales — Promociones Halloween',
+            'href' => '/promociones-halloween-2026',
+        ],
+        [
             'image' => '/img/productos/globos-slider.webp',
             'imageMobile' => '/img/productos/globos-movil-slider1.webp',
             'name' => '',

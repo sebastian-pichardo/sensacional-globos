@@ -1,50 +1,50 @@
 <script setup>
-import InputError from '@/Components/InputError.vue';
-import PublicLayout from '@/Layouts/PublicLayout.vue';
-import { Head, Link, useForm, usePage } from '@inertiajs/vue3';
-import { computed, onBeforeUnmount, onMounted, ref, watch } from 'vue';
+import InputError from "@/Components/InputError.vue";
+import PublicLayout from "@/Layouts/PublicLayout.vue";
+import { Head, Link, useForm, usePage } from "@inertiajs/vue3";
+import { computed, onBeforeUnmount, onMounted, ref, watch } from "vue";
 
 const page = usePage();
-const appUrl = computed(() => page.props.appUrl ?? page.props.ziggy?.url ?? '');
+const appUrl = computed(() => page.props.appUrl ?? page.props.ziggy?.url ?? "");
 const canonical = computed(() => `${appUrl.value}/promociones-halloween-2026`);
 const description =
-    'Participa en el concurso de Halloween 2026 de Globos Sensacional. Vota por tus decoraciones favoritas para primer, segundo y tercer lugar.';
+    "Participa en el concurso de Halloween 2026 de Globos Sensacional. Vota por tus decoraciones favoritas para primer, segundo y tercer lugar.";
 const ogImage = computed(
     () => `${appUrl.value}/img/productos/portada-promocion-de-halloween.png`,
 );
 
 const participantes = [
     {
-        value: 'los_villanos',
-        title: 'Los Villanos',
-        displayLabel: '“Los villanos”',
-        image: '/img/productos/concurso-octubre1-globossensacional-2026.webp',
+        value: "los_villanos",
+        title: "Los Villanos",
+        displayLabel: "“Los villanos”",
+        image: "/img/productos/concurso-octubre1-globossensacional-2026.webp",
     },
     {
-        value: 'hola_frankie',
-        title: 'Hola frankie',
-        displayLabel: 'Hola frankie',
-        image: '/img/productos/concurso-octubre2-globossensacional-2026.webp',
+        value: "hola_frankie",
+        title: "Hola frankie",
+        displayLabel: "Hola frankie",
+        image: "/img/productos/concurso-octubre2-globossensacional-2026.webp",
     },
     {
-        value: 'arco_halloween',
-        title: 'Arco de halloween',
-        displayLabel: 'Arco de halloween',
-        image: '/img/productos/concurso-octubre3-globossensacional-2026.webp',
+        value: "arco_halloween",
+        title: "Arco de halloween",
+        displayLabel: "Arco de halloween",
+        image: "/img/productos/concurso-octubre3-globossensacional-2026.webp",
     },
     {
-        value: 'monstruo_frankie',
-        title: 'Monstruo frankie',
-        displayLabel: 'Monstruo frankie',
-        image: '/img/productos/concurso-octubre4-globossensacional-2026.webp',
+        value: "monstruo_frankie",
+        title: "Monstruo frankie",
+        displayLabel: "Monstruo frankie",
+        image: "/img/productos/concurso-octubre4-globossensacional-2026.webp",
     },
 ];
 
 const form = useForm({
-    email: '',
-    tercero: '',
-    segundo: '',
-    primero: '',
+    email: "",
+    tercero: "",
+    segundo: "",
+    primero: "",
     accept_terms: false,
 });
 
@@ -53,12 +53,19 @@ const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
 
 const isEmailValid = computed(() => emailRegex.test(form.email.trim()));
 const showEmailFormatWarning = computed(
-    () => emailTouched.value && form.email.trim().length > 0 && !isEmailValid.value,
+    () =>
+        emailTouched.value &&
+        form.email.trim().length > 0 &&
+        !isEmailValid.value,
 );
 
 const canSelectTercero = computed(() => isEmailValid.value);
-const canSelectSegundo = computed(() => canSelectTercero.value && Boolean(form.tercero));
-const canSelectPrimero = computed(() => canSelectSegundo.value && Boolean(form.segundo));
+const canSelectSegundo = computed(
+    () => canSelectTercero.value && Boolean(form.tercero),
+);
+const canSelectPrimero = computed(
+    () => canSelectSegundo.value && Boolean(form.segundo),
+);
 const allPlacesSelected = computed(
     () =>
         canSelectPrimero.value &&
@@ -70,9 +77,9 @@ const canSubmit = computed(() => allPlacesSelected.value && form.accept_terms);
 
 watch(isEmailValid, (valid) => {
     if (!valid) {
-        form.tercero = '';
-        form.segundo = '';
-        form.primero = '';
+        form.tercero = "";
+        form.segundo = "";
+        form.primero = "";
         form.accept_terms = false;
     }
 });
@@ -81,18 +88,18 @@ watch(
     () => form.tercero,
     (newVal) => {
         if (!newVal) {
-            form.segundo = '';
-            form.primero = '';
+            form.segundo = "";
+            form.primero = "";
             form.accept_terms = false;
             return;
         }
         if (form.segundo === newVal) {
-            form.segundo = '';
-            form.primero = '';
+            form.segundo = "";
+            form.primero = "";
             form.accept_terms = false;
         }
         if (form.primero === newVal) {
-            form.primero = '';
+            form.primero = "";
             form.accept_terms = false;
         }
     },
@@ -102,12 +109,12 @@ watch(
     () => form.segundo,
     (newVal) => {
         if (!newVal) {
-            form.primero = '';
+            form.primero = "";
             form.accept_terms = false;
             return;
         }
         if (form.primero === newVal) {
-            form.primero = '';
+            form.primero = "";
             form.accept_terms = false;
         }
     },
@@ -123,11 +130,14 @@ watch(
 );
 
 const isOptionDisabledForSegundo = (value) => value === form.tercero;
-const isOptionDisabledForPrimero = (value) => value === form.tercero || value === form.segundo;
+const isOptionDisabledForPrimero = (value) =>
+    value === form.tercero || value === form.segundo;
 
 const selectedImageIndex = ref(null);
 const selectedParticipant = computed(() =>
-    selectedImageIndex.value !== null ? participantes[selectedImageIndex.value] : null,
+    selectedImageIndex.value !== null
+        ? participantes[selectedImageIndex.value]
+        : null,
 );
 
 const openImageModal = (index) => {
@@ -141,37 +151,39 @@ const closeImageModal = () => {
 const prevImage = () => {
     if (selectedImageIndex.value === null) return;
     selectedImageIndex.value =
-        (selectedImageIndex.value - 1 + participantes.length) % participantes.length;
+        (selectedImageIndex.value - 1 + participantes.length) %
+        participantes.length;
 };
 
 const nextImage = () => {
     if (selectedImageIndex.value === null) return;
-    selectedImageIndex.value = (selectedImageIndex.value + 1) % participantes.length;
+    selectedImageIndex.value =
+        (selectedImageIndex.value + 1) % participantes.length;
 };
 
 const handleKeydown = (event) => {
     if (selectedImageIndex.value === null) return;
-    if (event.key === 'Escape') {
+    if (event.key === "Escape") {
         closeImageModal();
-    } else if (event.key === 'ArrowLeft') {
+    } else if (event.key === "ArrowLeft") {
         prevImage();
-    } else if (event.key === 'ArrowRight') {
+    } else if (event.key === "ArrowRight") {
         nextImage();
     }
 };
 
 onMounted(() => {
-    window.addEventListener('keydown', handleKeydown);
+    window.addEventListener("keydown", handleKeydown);
 });
 
 onBeforeUnmount(() => {
-    window.removeEventListener('keydown', handleKeydown);
+    window.removeEventListener("keydown", handleKeydown);
 });
 
 const submit = () => {
     if (!canSubmit.value || form.processing) return;
 
-    form.post(route('promociones-halloween-2026.store'), {
+    form.post(route("promociones-halloween-2026.store"), {
         preserveScroll: true,
         onSuccess: () => {
             form.reset();
@@ -189,7 +201,10 @@ const submit = () => {
             <meta property="og:type" content="website" />
             <meta property="og:locale" content="es_MX" />
             <meta property="og:site_name" content="Globos Sensacionales" />
-            <meta property="og:title" content="Promociones Halloween 2026 | Globos Sensacionales" />
+            <meta
+                property="og:title"
+                content="Promociones Halloween 2026 | Globos Sensacionales"
+            />
             <meta property="og:description" :content="description" />
             <meta property="og:url" :href="canonical" />
             <meta property="og:image" :content="ogImage" />
@@ -197,7 +212,10 @@ const submit = () => {
 
         <section
             class="relative min-h-screen overflow-hidden bg-white bg-repeat pt-32 pb-0 sm:pt-36"
-            style="background-image: url('/img/productos/fondo-promcion.jpeg'); background-size: 640px auto;"
+            style="
+                background-image: url(&quot;/img/productos/fondo-promcion.jpeg&quot;);
+                background-size: 640px auto;
+            "
         >
             <div class="relative z-10 mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
                 <!-- Portada centrada y texto animado de Globoween 2 -->
@@ -214,22 +232,26 @@ const submit = () => {
                         <h1
                             class="globoween-fade-up globoween-gradient-text text-2xl font-extrabold tracking-tight sm:text-3xl md:text-4xl"
                         >
-                            ¡Ayúdanos a decidir quiénes serán los ganadores de nuestros grandes
-                            premios!
+                            ¡Ayúdanos a decidir quiénes serán los ganadores de
+                            nuestros grandes premios!
                         </h1>
 
                         <p
                             class="globoween-fade-up globoween-delay-1 mx-auto max-w-3xl text-base font-semibold leading-relaxed text-[#4a126e] sm:text-lg"
                         >
                             Por segundo año consecutivo regresa
-                            <span class="font-extrabold text-[#e6692e]">Globoween</span>
-                            para probar las habilidades y el arte de nuestros colaboradores.
+                            <span class="font-extrabold text-[#e6692e]"
+                                >Globoween</span
+                            >
+                            para probar las habilidades y el arte de nuestros
+                            colaboradores.
                         </p>
 
                         <p
                             class="globoween-fade-up globoween-delay-2 mx-auto max-w-3xl text-base font-medium leading-relaxed text-gray-800 sm:text-lg"
                         >
-                            Ellos hicieron decoraciones increíbles y es tu turno de decidir el
+                            Ellos hicieron decoraciones increíbles y es tu turno
+                            de decidir el
                             <span class="font-extrabold text-[#6b1a9b]"
                                 >primero, segundo y tercer lugar</span
                             >; en tus manos está la corona de esta dinámica.
@@ -238,9 +260,13 @@ const submit = () => {
                         <p
                             class="globoween-fade-up globoween-delay-3 mx-auto max-w-3xl text-base font-bold leading-relaxed text-[#e6692e] sm:text-lg"
                         >
-                            ¡Llena el formulario y haz que la mejor decoración con
-                            <span class="text-[#6b1a9b]">Globos Sensacional</span> gane. Las
-                            creaciones con más votos serán los reyes de este
+                            ¡Llena el formulario y haz que la mejor decoración
+                            con
+                            <span class="text-[#6b1a9b]"
+                                >Globos Sensacional</span
+                            >
+                            gane. Las creaciones con más votos serán los reyes
+                            de este
                             <span
                                 class="inline-block rounded-lg bg-[#6b1a9b] px-2.5 py-0.5 text-white shadow-xs"
                                 >Globoween 2</span
@@ -257,7 +283,7 @@ const submit = () => {
                                 <span>
                                     Duración de la dinámica:
                                     <strong class="text-[#e6692e]"
-                                        >30 de Octubre - 03 de Noviembre</strong
+                                        >29 de Octubre - 03 de Noviembre</strong
                                     >
                                 </span>
                             </div>
@@ -269,8 +295,8 @@ const submit = () => {
                                 <span>
                                     Anuncio del ganador:
                                     <strong class="text-[#e6692e]"
-                                        >En nuestro live el 04 de Noviembre por facebook a las
-                                        19:00 hrs.</strong
+                                        >En nuestro live el 04 de Noviembre por
+                                        facebook a las 19:00 hrs.</strong
                                     >
                                 </span>
                             </div>
@@ -279,7 +305,9 @@ const submit = () => {
                 </div>
 
                 <!-- Galería de los 4 participantes -->
-                <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4 lg:gap-7">
+                <div
+                    class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4 lg:gap-7"
+                >
                     <div
                         v-for="(item, index) in participantes"
                         :key="item.value"
@@ -291,7 +319,9 @@ const submit = () => {
                             :aria-label="`Ver imagen más grande de ${item.title}`"
                             @click="openImageModal(index)"
                         >
-                            <div class="aspect-square w-full overflow-hidden bg-white">
+                            <div
+                                class="aspect-square w-full overflow-hidden bg-white"
+                            >
                                 <img
                                     :src="item.image"
                                     :alt="item.title"
@@ -319,7 +349,9 @@ const submit = () => {
                             </span>
                         </button>
 
-                        <h2 class="mt-3 text-center text-lg font-medium text-gray-900 sm:text-xl">
+                        <h2
+                            class="mt-3 text-center text-lg font-medium text-gray-900 sm:text-xl"
+                        >
                             {{ item.displayLabel }}
                         </h2>
                     </div>
@@ -340,7 +372,9 @@ const submit = () => {
                     @submit.prevent="submit"
                 >
                     <!-- Primer lugar (se habilita al final, tras elegir segundo lugar) -->
-                    <div class="flex flex-col gap-3 sm:flex-row sm:items-center sm:gap-6">
+                    <div
+                        class="flex flex-col gap-3 sm:flex-row sm:items-center sm:gap-6"
+                    >
                         <label
                             for="select-primero"
                             class="flex h-12 w-full shrink-0 items-center justify-center rounded-full bg-[#6b1a9b] px-6 text-center text-base font-bold text-white shadow-sm sm:w-52 sm:text-lg"
@@ -357,30 +391,37 @@ const submit = () => {
                                 <option value="" disabled>
                                     {{
                                         canSelectPrimero
-                                            ? 'Selecciona el primer lugar...'
-                                            : 'Se habilita después de elegir el segundo lugar'
+                                            ? "Selecciona el primer lugar..."
+                                            : "Se habilita después de elegir el segundo lugar"
                                     }}
                                 </option>
                                 <option
                                     v-for="item in participantes"
                                     :key="`primero-${item.value}`"
                                     :value="item.value"
-                                    :disabled="isOptionDisabledForPrimero(item.value)"
+                                    :disabled="
+                                        isOptionDisabledForPrimero(item.value)
+                                    "
                                 >
                                     {{ item.title }}
                                     {{
                                         isOptionDisabledForPrimero(item.value)
-                                            ? ' (Ya seleccionado)'
-                                            : ''
+                                            ? " (Ya seleccionado)"
+                                            : ""
                                     }}
                                 </option>
                             </select>
-                            <InputError class="mt-1 pl-4" :message="form.errors.primero" />
+                            <InputError
+                                class="mt-1 pl-4"
+                                :message="form.errors.primero"
+                            />
                         </div>
                     </div>
 
                     <!-- Segundo lugar (se habilita tras elegir tercer lugar) -->
-                    <div class="flex flex-col gap-3 sm:flex-row sm:items-center sm:gap-6">
+                    <div
+                        class="flex flex-col gap-3 sm:flex-row sm:items-center sm:gap-6"
+                    >
                         <label
                             for="select-segundo"
                             class="flex h-12 w-full shrink-0 items-center justify-center rounded-full bg-[#e6692e] px-6 text-center text-base font-bold text-white shadow-sm sm:w-52 sm:text-lg"
@@ -397,30 +438,37 @@ const submit = () => {
                                 <option value="" disabled>
                                     {{
                                         canSelectSegundo
-                                            ? 'Selecciona el segundo lugar...'
-                                            : 'Se habilita después de elegir el tercer lugar'
+                                            ? "Selecciona el segundo lugar..."
+                                            : "Se habilita después de elegir el tercer lugar"
                                     }}
                                 </option>
                                 <option
                                     v-for="item in participantes"
                                     :key="`segundo-${item.value}`"
                                     :value="item.value"
-                                    :disabled="isOptionDisabledForSegundo(item.value)"
+                                    :disabled="
+                                        isOptionDisabledForSegundo(item.value)
+                                    "
                                 >
                                     {{ item.title }}
                                     {{
                                         isOptionDisabledForSegundo(item.value)
-                                            ? ' (Ya seleccionado)'
-                                            : ''
+                                            ? " (Ya seleccionado)"
+                                            : ""
                                     }}
                                 </option>
                             </select>
-                            <InputError class="mt-1 pl-4" :message="form.errors.segundo" />
+                            <InputError
+                                class="mt-1 pl-4"
+                                :message="form.errors.segundo"
+                            />
                         </div>
                     </div>
 
                     <!-- Tercer lugar (se habilita primero al ingresar un correo válido) -->
-                    <div class="flex flex-col gap-3 sm:flex-row sm:items-center sm:gap-6">
+                    <div
+                        class="flex flex-col gap-3 sm:flex-row sm:items-center sm:gap-6"
+                    >
                         <label
                             for="select-tercero"
                             class="flex h-12 w-full shrink-0 items-center justify-center rounded-full bg-[#6b1a9b] px-6 text-center text-base font-bold text-white shadow-sm sm:w-52 sm:text-lg"
@@ -437,8 +485,8 @@ const submit = () => {
                                 <option value="" disabled>
                                     {{
                                         canSelectTercero
-                                            ? 'Selecciona el tercer lugar...'
-                                            : 'Primero ingresa un correo electrónico válido abajo'
+                                            ? "Selecciona el tercer lugar..."
+                                            : "Primero ingresa un correo electrónico válido abajo"
                                     }}
                                 </option>
                                 <option
@@ -449,12 +497,17 @@ const submit = () => {
                                     {{ item.title }}
                                 </option>
                             </select>
-                            <InputError class="mt-1 pl-4" :message="form.errors.tercero" />
+                            <InputError
+                                class="mt-1 pl-4"
+                                :message="form.errors.tercero"
+                            />
                         </div>
                     </div>
 
                     <!-- Correo electrónico (paso 1 para habilitar la votación) -->
-                    <div class="flex flex-col gap-3 sm:flex-row sm:items-center sm:gap-6">
+                    <div
+                        class="flex flex-col gap-3 sm:flex-row sm:items-center sm:gap-6"
+                    >
                         <label
                             for="input-email"
                             class="flex h-12 w-full shrink-0 items-center justify-center rounded-full bg-[#e6692e] px-6 text-center text-base font-bold text-white shadow-sm sm:w-52 sm:text-lg"
@@ -481,15 +534,21 @@ const submit = () => {
                                 v-if="showEmailFormatWarning"
                                 class="mt-1 pl-4 text-xs font-medium text-amber-700 sm:text-sm"
                             >
-                                Ingresa un correo electrónico con formato válido (ejemplo:
-                                correo@dominio.com) para habilitar el tercer lugar.
+                                Ingresa un correo electrónico con formato válido
+                                (ejemplo: correo@dominio.com) para habilitar el
+                                tercer lugar.
                             </p>
-                            <InputError class="mt-1 pl-4" :message="form.errors.email" />
+                            <InputError
+                                class="mt-1 pl-4"
+                                :message="form.errors.email"
+                            />
                         </div>
                     </div>
 
                     <!-- Checkbox de términos y condiciones (se habilita al elegir los 3 lugares) -->
-                    <div class="flex flex-col gap-3 pt-2 sm:flex-row sm:items-center sm:gap-6">
+                    <div
+                        class="flex flex-col gap-3 pt-2 sm:flex-row sm:items-center sm:gap-6"
+                    >
                         <div class="hidden sm:block sm:w-52 sm:shrink-0"></div>
                         <div class="w-full flex-1">
                             <label
@@ -509,7 +568,8 @@ const submit = () => {
                                     class="h-5 w-5 rounded border-2 border-[#6b1a9b] text-[#6b1a9b] transition focus:ring-[#6b1a9b] disabled:cursor-not-allowed disabled:border-gray-300"
                                 />
                                 <span class="text-sm font-medium sm:text-base">
-                                    Aceptas términos y condiciones de esta promoción
+                                    Aceptas términos y condiciones de esta
+                                    promoción
                                     <Link
                                         :href="route('aviso-de-privacidad')"
                                         class="ml-1 underline decoration-[#6b1a9b]/50 underline-offset-2 hover:text-[#6b1a9b]"
@@ -519,12 +579,17 @@ const submit = () => {
                                     </Link>
                                 </span>
                             </label>
-                            <InputError class="mt-1 pl-3" :message="form.errors.accept_terms" />
+                            <InputError
+                                class="mt-1 pl-3"
+                                :message="form.errors.accept_terms"
+                            />
                         </div>
                     </div>
 
                     <!-- Botón Enviar con suave efecto fade de aparecer -->
-                    <div class="flex flex-col gap-3 sm:flex-row sm:items-center sm:gap-6">
+                    <div
+                        class="flex flex-col gap-3 sm:flex-row sm:items-center sm:gap-6"
+                    >
                         <div class="hidden sm:block sm:w-52 sm:shrink-0"></div>
                         <div class="w-full flex-1">
                             <Transition
@@ -539,9 +604,13 @@ const submit = () => {
                                     v-if="canSubmit"
                                     type="submit"
                                     :disabled="form.processing"
-                                    class=" flex h-12 w-full items-center justify-center rounded-full bg-[#e6692e] px-10 text-base font-bold text-white shadow-md transition hover:bg-[#d45a20] focus:outline-none focus:ring-4 focus:ring-[#e6692e]/40 disabled:opacity-60 sm:w-56 sm:text-lg cursor-pointer"
+                                    class="flex h-12 w-full items-center justify-center rounded-full bg-[#e6692e] px-10 text-base font-bold text-white shadow-md transition hover:bg-[#d45a20] focus:outline-none focus:ring-4 focus:ring-[#e6692e]/40 disabled:opacity-60 sm:w-56 sm:text-lg cursor-pointer"
                                 >
-                                    {{ form.processing ? 'Enviando...' : 'Enviar' }}
+                                    {{
+                                        form.processing
+                                            ? "Enviando..."
+                                            : "Enviar"
+                                    }}
                                 </button>
                             </Transition>
                         </div>
@@ -550,7 +619,10 @@ const submit = () => {
             </div>
 
             <!-- Escena a todo el ancho: sube detrás del formulario y queda sobre el pie de página -->
-            <div class="halloween-scene pointer-events-none relative z-0 w-full select-none" aria-hidden="true">
+            <div
+                class="halloween-scene pointer-events-none relative z-0 w-full select-none"
+                aria-hidden="true"
+            >
                 <img
                     src="/img/productos/fondo-halloween.png"
                     alt=""
@@ -652,7 +724,9 @@ const submit = () => {
                         class="max-h-[75vh] w-auto object-contain"
                     />
 
-                    <h3 class="mt-3 text-center text-xl font-bold text-[#6b1a9b] sm:text-2xl">
+                    <h3
+                        class="mt-3 text-center text-xl font-bold text-[#6b1a9b] sm:text-2xl"
+                    >
                         {{ selectedParticipant.displayLabel }}
                     </h3>
                 </div>
@@ -772,4 +846,3 @@ const submit = () => {
     }
 }
 </style>
-
