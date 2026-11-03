@@ -12,13 +12,6 @@ use Inertia\Response;
 
 class PromocionController extends Controller
 {
-    private const PARTICIPANTES = [
-        'los_villanos',
-        'hola_frankie',
-        'arco_halloween',
-        'monstruo_frankie',
-    ];
-
     public function index(): Response
     {
         return Inertia::render('PromocionesHalloween2026');
@@ -37,9 +30,9 @@ class PromocionController extends Controller
         $validated = $request->validate(
             [
                 'email' => ['required', 'string', 'email', 'max:255'],
-                'tercero' => ['required', 'string', Rule::in(self::PARTICIPANTES)],
-                'segundo' => ['required', 'string', Rule::in(self::PARTICIPANTES)],
-                'primero' => ['required', 'string', Rule::in(self::PARTICIPANTES)],
+                'tercero' => ['required', 'string', Rule::in(Promocion::claves())],
+                'segundo' => ['required', 'string', Rule::in(Promocion::claves())],
+                'primero' => ['required', 'string', Rule::in(Promocion::claves())],
                 'accept_terms' => ['accepted'],
             ],
             [

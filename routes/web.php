@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\CatalogController;
 use App\Http\Controllers\ContactController;
+use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\DistribuidorController;
 use App\Http\Controllers\DiyGloboController;
 use App\Http\Controllers\HomeController;
@@ -12,7 +13,6 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\PromocionController;
 use App\Http\Controllers\SeoController;
 use Illuminate\Support\Facades\Route;
-use Inertia\Inertia;
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
 
@@ -55,9 +55,13 @@ Route::post('/catalogo/solicitar', [CatalogController::class, 'downloadRequested
 Route::get('/robots.txt', [SeoController::class, 'robots'])->name('robots');
 Route::get('/sitemap.xml', [SeoController::class, 'sitemap'])->name('sitemap');
 
-Route::get('/dashboard', function () {
-    return Inertia::render('Dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
+Route::middleware(['auth', 'verified'])->group(function () {
+    Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
+    Route::delete('/dashboard/votaciones', [DashboardController::class, 'destroy'])
+        ->name('dashboard.votaciones.destroy');
+    Route::delete('/dashboard/votaciones/todas', [DashboardController::class, 'destroyAll'])
+        ->name('dashboard.votaciones.destroy-all');
+});
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
