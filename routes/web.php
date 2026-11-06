@@ -34,11 +34,11 @@ Route::post('/api/diy-globos/guardar-seleccion', [DiyGloboController::class, 'gu
     ->name('diy-globos.guardar-seleccion');
 Route::get('/aviso-de-privacidad', [HomeController::class, 'avisoPrivacidad'])->name('aviso-de-privacidad');
 
-Route::get('/promociones-halloween-2026', [PromocionController::class, 'index'])
+/* Route::get('/promociones-halloween-2026', [PromocionController::class, 'index'])
     ->name('promociones-halloween-2026');
 Route::post('/promociones-halloween-2026', [PromocionController::class, 'store'])
     ->middleware('throttle:10,1')
-    ->name('promociones-halloween-2026.store');
+    ->name('promociones-halloween-2026.store'); */
 
 Route::post('/leads', [LeadController::class, 'store'])->name('leads.store');
 Route::post('/contacto', [ContactController::class, 'store'])
