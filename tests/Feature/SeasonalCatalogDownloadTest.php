@@ -12,7 +12,7 @@ class SeasonalCatalogDownloadTest extends TestCase
 
     public function test_guarda_el_correo_y_descarga_el_catalogo_de_temporada(): void
     {
-        $relative = 'catalogo/2026/catalogo-temporada-test.pdf';
+        $relative = 'catalogo/2026/catalogo-tem-globossensacional-2026.pdf';
         $path = public_path($relative);
         config(['globos.seasonal_catalog_path' => $relative]);
 

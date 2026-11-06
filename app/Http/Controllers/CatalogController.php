@@ -46,7 +46,9 @@ class CatalogController extends Controller
         $path = public_path((string) config(
             $esTemporada ? 'globos.seasonal_catalog_path' : 'globos.catalog_path',
         ));
-        $nombre = $esTemporada ? 'catalogo-de-temporada-2026.pdf' : 'catalogo-sensacional.pdf';
+        // 'catalogo-de-temporada-2026.pdf'
+        $nombre = $esTemporada ? 'catalogo-tem-globossensacional-2026.pdf' : 'catalogo-sensacional.pdf';
+
 
         if (is_file($path)) {
             return response()->download($path, $nombre);
