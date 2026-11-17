@@ -1,7 +1,7 @@
 <?php
 
 return [
-    'name' => 'Globos Sensacionales',
+    'name' => 'Globos Sensacional',
     'shipping' => 'Envíos a todo México',
     'whatsapp' => env('GLOBOS_WHATSAPP', '5212225083848'),
     'mail' => [
@@ -25,7 +25,7 @@ return [
         'youtube' => env('GLOBOS_YOUTUBE', 'https://www.youtube.com/@GlobosSensacional'),
     ],
     'seo' => [
-        'description' => 'Globos Sensacionales fabrica globos 100% de látex natural para distribuidores, decoradores y puntos de venta. Más de 30 años de experiencia. Envíos a todo México.',
+        'description' => 'Globos Sensacional fabrica globos 100% de látex natural para distribuidores, decoradores y puntos de venta y negocios en todo México. Más de 30 años de experiencia nos respaldan. ¡Cotiza hoy con Globos Sensacional!.',
     ],
     'states' => [
         'Aguascalientes',
