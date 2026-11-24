@@ -1,12 +1,16 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es-MX">
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="theme-color" content="#32BEF0">
-        <link rel="icon" type="image/png" href="/img/logo/logo-negro.png">
+        {{-- <link rel="icon" type="image/png" href="/img/logo/logo-negro.png"> --}}
+        <link rel="apple-touch-icon" sizes="180x180" href="/img/logo/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="/img/logo/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/img/logo/favicon-16x16.png">
+        <link rel="manifest" href="/img/logo/site.webmanifest">
 
-        <title inertia>{{ config('app.name', 'Globos Sensacionales') }}</title>
+        <title inertia>{{ config('app.name') }}</title>
 
         <!-- Fonts -->
         <link rel="preconnect" href="https://fonts.bunny.net">

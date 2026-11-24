@@ -7,7 +7,7 @@ const page = usePage();
 const shipping = computed(
     () => page.props.brand?.shipping ?? "Envíos a todo México",
 );
-const social = computed(() => page.props.brand?.social ?? {});
+const social = computed(() => page.props.brand?.social ?? { });
 
 const links = [
     { label: "Nosotros", route: "nosotros" },
@@ -24,6 +24,8 @@ const networks = computed(() => [
     { name: "TikTok", href: social.value.tiktok || "#" },
     { name: "YouTube", href: social.value.youtube || "#" },
 ]);
+
+
 </script>
 
 <template>
@@ -88,6 +90,20 @@ const networks = computed(() => [
                         </a>
                     </li>
                 </ul>
+            
+                <div class="mt-4">
+                    <p
+                        class="text-sm font-bold uppercase tracking-wide text-brand-cyan"
+                    >
+                        Contáctanos
+                    </p>
+                    <p class="mt-2 text-sm text-gray-300">
+                        Teléfono: <a href="tel:+523318078792" aria-label="Llamar al 33 18 07 87 92" class="hover:text-brand-yellow">33 1807 8792</a>
+                    </p>
+                    <p class="mt-1 text-sm text-gray-300">
+                        Correo: <a href="mailto:ventas@pioneerballoon.com" class="hover:text-brand-yellow">ventas@pioneerballoon.com</a>
+                    </p>
+                </div>
             </div>
 
             <NewsletterForm />

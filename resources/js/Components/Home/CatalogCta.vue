@@ -59,6 +59,7 @@ onUnmounted(() => {
                 <article>
                     <button
                         type="button"
+                        style="cursor: pointer;"
                         class="mx-auto flex max-w-[320px] rounded-[8px] transition hover:scale-[1.02] focus:outline-hidden focus-visible:ring-2 focus-visible:ring-white"
                         @click="abrir('general')"
                     >
@@ -74,6 +75,7 @@ onUnmounted(() => {
                 <article>
                     <button
                         type="button"
+                        style="cursor: pointer;"
                         class="mx-auto flex max-w-[320px] rounded-[8px] transition hover:scale-[1.02] focus:outline-hidden focus-visible:ring-2 focus-visible:ring-white"
                         @click="abrir('temporada')"
                     >

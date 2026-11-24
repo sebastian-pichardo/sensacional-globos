@@ -7,7 +7,7 @@ import { createApp, h } from 'vue';
 // import { ZiggyVue } from '../../vendor/tightenco/ziggy';
 import { ZiggyVue } from 'ziggy-js'
 
-const appName = import.meta.env.VITE_APP_NAME || 'Globos Sensacionales';
+const appName = import.meta.env.VITE_APP_NAME || 'Globos Sensacional';
 
 createInertiaApp({
     title: (title) => `${title} - ${appName}`,
