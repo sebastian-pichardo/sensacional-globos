@@ -3,6 +3,7 @@
 use App\Http\Controllers\CatalogController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\DashboardCorreosController;
 use App\Http\Controllers\DistribuidorController;
 use App\Http\Controllers\DiyGloboController;
 use App\Http\Controllers\HomeController;
@@ -61,6 +62,14 @@ Route::middleware(['auth', 'verified'])->group(function () {
         ->name('dashboard.votaciones.destroy');
     Route::delete('/dashboard/votaciones/todas', [DashboardController::class, 'destroyAll'])
         ->name('dashboard.votaciones.destroy-all');
+    Route::get('/dashboard/catalogos', [DashboardCorreosController::class, 'catalogos'])
+        ->name('dashboard.catalogos');
+    Route::get('/dashboard/catalogos/pdf', [DashboardCorreosController::class, 'catalogosPdf'])
+        ->name('dashboard.catalogos.pdf');
+    Route::get('/dashboard/newsletter', [DashboardCorreosController::class, 'newsletter'])
+        ->name('dashboard.newsletter');
+    Route::get('/dashboard/newsletter/pdf', [DashboardCorreosController::class, 'newsletterPdf'])
+        ->name('dashboard.newsletter.pdf');
 });
 
 Route::middleware('auth')->group(function () {

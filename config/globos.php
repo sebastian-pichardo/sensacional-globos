@@ -69,7 +69,7 @@ return [
             'sku' => '',
             'description' => '',
             'alt' => 'Globos Sensacional — Catalogo 2026',
-            'href' => null,
+            'href' => '#catalogo-titulo',
         ],
         [
             'image' => '/img/productos/globos-slider2.webp',
@@ -78,7 +78,7 @@ return [
             'sku' => '',
             'description' => '',
             'alt' => 'Globos Sensacional — es un producto amigable con el planeta',
-            'href' => null,
+            'href' => '/productos',
         ],
         [
             'image' => '/img/productos/globossensacional-navidad-2026.webp',
@@ -95,10 +95,10 @@ return [
             'name' => '',
             'sku' => '',
             'description' => '',
-            'alt' => 'Globos Sensacional — colección 4',
-            'href' => null,
+            'alt' => 'Globos Sensacional — Nuestros distribuidores',
+            'href' => '/encuentra-un-distribuidor',
         ],
-                [
+        [
             'image' => '/img/productos/globossensacional-halloweenmuertos.webp',
             'imageMobile' => '/img/productos/globossensacional-halloween.webp',
             'name' => '',

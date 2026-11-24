@@ -25,10 +25,10 @@
     "/build/assets/EncuentraDistribuidor-ByBSeMTM.js"
   ],
   "resources/js/Components/Dropdown.vue": [
-    "/build/assets/AuthenticatedLayout-Bm3uHsER.js"
+    "/build/assets/AuthenticatedLayout-Bz8zEHEh.js"
   ],
   "resources/js/Components/DropdownLink.vue": [
-    "/build/assets/AuthenticatedLayout-Bm3uHsER.js"
+    "/build/assets/AuthenticatedLayout-Bz8zEHEh.js"
   ],
   "resources/js/Components/HazloTuMismo/DiyDiagramCta.vue": [
     "/build/assets/HazloTuMismo-B7Zv7G8H.js"
@@ -91,7 +91,7 @@
     "/build/assets/SecondaryButton-Def8KJ3B.js"
   ],
   "resources/js/Components/NavLink.vue": [
-    "/build/assets/AuthenticatedLayout-Bm3uHsER.js"
+    "/build/assets/AuthenticatedLayout-Bz8zEHEh.js"
   ],
   "resources/js/Components/Nosotros/AboutStory.vue": [
     "/build/assets/Nosotros-tMESM3yX.js"
@@ -148,7 +148,7 @@
     "/build/assets/PublicLayout-DIY9xLKe.js"
   ],
   "resources/js/Components/ResponsiveNavLink.vue": [
-    "/build/assets/AuthenticatedLayout-Bm3uHsER.js"
+    "/build/assets/AuthenticatedLayout-Bz8zEHEh.js"
   ],
   "resources/js/Components/SecondaryButton.vue": [
     "/build/assets/SecondaryButton-Def8KJ3B.js"
@@ -157,7 +157,7 @@
     "/build/assets/TextInput-BU24nTjw.js"
   ],
   "resources/js/Layouts/AuthenticatedLayout.vue": [
-    "/build/assets/AuthenticatedLayout-Bm3uHsER.js"
+    "/build/assets/AuthenticatedLayout-Bz8zEHEh.js"
   ],
   "resources/js/Layouts/GuestLayout.vue": [
     "/build/assets/GuestLayout-39lAgZRd.js"
@@ -190,7 +190,10 @@
     "/build/assets/ComingSoon-FG81qgaS.js"
   ],
   "resources/js/Pages/Dashboard.vue": [
-    "/build/assets/Dashboard-DAt9GG3q.js"
+    "/build/assets/Dashboard-MV1lBBEE.js"
+  ],
+  "resources/js/Pages/Dashboard/Correos.vue": [
+    "/build/assets/Correos-BKCxJY8K.js"
   ],
   "resources/js/Pages/EncuentraDistribuidor.vue": [
     "/build/assets/EncuentraDistribuidor-ByBSeMTM.js"
@@ -211,7 +214,7 @@
     "/build/assets/Productos-CPQ1rPyb.js"
   ],
   "resources/js/Pages/Profile/Edit.vue": [
-    "/build/assets/Edit-unmCe_kM.js"
+    "/build/assets/Edit-B-YlFW4R.js"
   ],
   "resources/js/Pages/Profile/Partials/DeleteUserForm.vue": [
     "/build/assets/DeleteUserForm-ByraRc7m.js"

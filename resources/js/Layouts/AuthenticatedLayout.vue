@@ -37,7 +37,19 @@ const showingNavigationDropdown = ref(false);
                                     :href="route('dashboard')"
                                     :active="route().current('dashboard')"
                                 >
-                                    Dashboard
+                                    Votaciones
+                                </NavLink>
+                                <NavLink
+                                    :href="route('dashboard.catalogos')"
+                                    :active="route().current('dashboard.catalogos')"
+                                >
+                                    Catálogos
+                                </NavLink>
+                                <NavLink
+                                    :href="route('dashboard.newsletter')"
+                                    :active="route().current('dashboard.newsletter')"
+                                >
+                                    Newsletter
                                 </NavLink>
                             </div>
                         </div>
@@ -144,7 +156,19 @@ const showingNavigationDropdown = ref(false);
                             :href="route('dashboard')"
                             :active="route().current('dashboard')"
                         >
-                            Dashboard
+                            Votaciones
+                        </ResponsiveNavLink>
+                        <ResponsiveNavLink
+                            :href="route('dashboard.catalogos')"
+                            :active="route().current('dashboard.catalogos')"
+                        >
+                            Catálogos
+                        </ResponsiveNavLink>
+                        <ResponsiveNavLink
+                            :href="route('dashboard.newsletter')"
+                            :active="route().current('dashboard.newsletter')"
+                        >
+                            Newsletter
                         </ResponsiveNavLink>
                     </div>
 
