@@ -5,7 +5,7 @@ import { resolvePageComponent } from 'laravel-vite-plugin/inertia-helpers';
 import { createSSRApp, h } from 'vue';
 //import { ZiggyVue } from '../../vendor/tightenco/ziggy';
 import { ZiggyVue } from 'ziggy-js'; // PRO
-const appName = import.meta.env.VITE_APP_NAME || 'Globos Sensacionales';
+const appName = import.meta.env.VITE_APP_NAME || 'Globos Sensacional';
 
 createServer((page) =>
     createInertiaApp({

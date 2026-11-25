@@ -36,7 +36,7 @@ const networks = computed(() => [
             <div>
                 <img
                     src="/img/logo/logo-blanco1.png"
-                    alt="Globos Sensacionales"
+                    alt="Globos Sensacional logo"
                     class="h-32 w-auto"
                 />
                 <p class="mt-4 max-w-sm text-sm text-gray-300">

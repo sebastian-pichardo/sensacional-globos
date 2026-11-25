@@ -24,7 +24,7 @@ const shipping = computed(() => page.props.brand?.shipping ?? 'Envíos a todo M�
                 
             </p>
             <a
-                :href="route('catalogo.descargar')"
+                href="/#catalogo-titulo"
                 class="mt-8 inline-flex items-center rounded-full bg-brand-red px-8 py-4 text-sm font-bold uppercase tracking-wide text-white shadow-lg transition hover:bg-brand-orange"
             >
                 Descargar catálogo

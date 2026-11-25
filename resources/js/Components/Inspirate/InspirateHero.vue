@@ -45,7 +45,7 @@
             >
                 <img
                     src="/img/productos/globossensacional-inspirate.png"
-                    alt="Decoradores y artistas del globo de la comunidad Globos Sensacionales"
+                    alt="Decoradores y artistas del globo de la comunidad Globos Sensacional"
                     class="aspect-square h-auto w-full object-cover object-center"
                     width="400"
                     height="400"

@@ -63,7 +63,7 @@ const navVisible = computed(() => !props.overlay || scrolled.value || open.value
                 <Link :href="route('home')" class="flex shrink-0 items-center">
                     <img
                         src="/img/logo/logo-globos-sensacional.png"
-                        alt="Globos Sensacionales"
+                        alt="Globos Sensacional logo"
                         class="h-16 w-auto sm:h-20 lg:h-[5.25rem]"
                     />
                 </Link>

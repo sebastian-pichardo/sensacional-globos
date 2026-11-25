@@ -23,8 +23,8 @@ const ogImage = computed(() => `${appUrl.value}/img/productos/fabrica.webp`);
             <link rel="canonical" :href="canonical" />
             <meta property="og:type" content="website" />
             <meta property="og:locale" content="es_MX" />
-            <meta property="og:site_name" content="Globos Sensacionales" />
-            <meta property="og:title" content="Nosotros | Globos Sensacionales" />
+            <meta property="og:site_name" content="Globos Sensacional" />
+            <meta property="og:title" content="Nosotros | Globos Sensacional" />
             <meta property="og:description" :content="description" />
             <meta property="og:url" :href="canonical" />
             <meta property="og:image" :content="ogImage" />
@@ -37,7 +37,7 @@ const ogImage = computed(() => `${appUrl.value}/img/productos/fabrica.webp`);
             <section aria-label="Globos ecológicos">
                 <img
                     src="/img/productos/globos-ecologicos.webp"
-                    alt="Globos ecológicos Sensacional"
+                    alt="Globos ecológicos 100% biodegradables"
                     class="block h-auto w-full"
                     loading="lazy"
                     decoding="async"

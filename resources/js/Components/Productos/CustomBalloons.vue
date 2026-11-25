@@ -65,7 +65,7 @@ const steps = [
                 >
                     <img
                         src="/img/productos/globo-personalizado.webp"
-                        alt="Impresión con logo en Globos Sensacionales"
+                        alt="Impresión con logo en Globos Sensacional"
                         class="aspect-square h-auto w-full object-cover object-center"
                         width="400"
                         height="400"

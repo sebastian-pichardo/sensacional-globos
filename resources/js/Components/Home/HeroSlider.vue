@@ -68,7 +68,7 @@ onUnmounted(() => {
         @mouseleave="paused = false"
     >
         <h1 class="sr-only">
-            Globos Sensacionales: fabricación de globos de látex para distribuidores en todo México
+            Globos Sensacional: fabricación de globos de látex para distribuidores en todo México
         </h1>
 
         <!-- Define la altura del slider según la imagen activa (sin recortar). -->

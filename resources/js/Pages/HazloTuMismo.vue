@@ -28,7 +28,7 @@ const description = computed(
         "Aprende técnicas con globos Sensacional: guirnaldas, backdrops, torres, mosaicos, esculturas y más. Tutoriales en video e instructivo descargable para crear decoraciones sensacionales.",
 );
 const canonical = computed(() => `${appUrl.value}/hazlo-tu-mismo`);
-const ogImage = computed(() => `${appUrl.value}/img/globos/guirnalda-1.webp`);
+const ogImage = computed(() => `${appUrl.value}/img/globos/guirnalda-0.webp`);
 </script>
 
 <template>
@@ -38,10 +38,10 @@ const ogImage = computed(() => `${appUrl.value}/img/globos/guirnalda-1.webp`);
             <link rel="canonical" :href="canonical" />
             <meta property="og:type" content="website" />
             <meta property="og:locale" content="es_MX" />
-            <meta property="og:site_name" content="Globos Sensacionales" />
+            <meta property="og:site_name" content="Globos Sensacional" />
             <meta
                 property="og:title"
-                content="Hazlo tú mismo | Globos Sensacionales"
+                content="Hazlo tú mismo | Globos Sensacional"
             />
             <meta property="og:description" :content="description" />
             <meta property="og:url" :href="canonical" />

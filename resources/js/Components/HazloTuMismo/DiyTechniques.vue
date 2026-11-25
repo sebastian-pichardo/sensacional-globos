@@ -6,7 +6,7 @@ const techniques = [
         title: 'Guirnaldas y Arcos orgánicos',
         accent: 'bg-brand-red',
         images: [
-            { src: '/img/globos/guirnalda-1.webp', alt: 'Guirnalda de globos 1' },
+            { src: '/img/globos/guirnalda-0.webp', alt: 'Globos sensacional guirnalda' },
             { src: '/img/globos/guirnalda-2.webp', alt: 'Guirnalda de globos 2' },
             { src: '/img/globos/guirnalda-3.webp', alt: 'Guirnalda de globos 3' },
         ],

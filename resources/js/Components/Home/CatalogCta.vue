@@ -8,6 +8,9 @@ const emailError = computed(() => page.props.errors?.email || '');
 const seasonalError = computed(() => page.props.flash?.seasonal_catalog || '');
 const abierto = ref(false);
 const catalogo = ref('general');
+const portadas = ref(null);
+const portadasVisibles = ref(false);
+let portadasObserver;
 
 const titulo = computed(() =>
     catalogo.value === 'temporada' ? 'Catálogo de temporada' : 'Catálogo general 2026',
@@ -28,6 +31,17 @@ const onKey = (event) => {
     }
 };
 
+const irAlAncla = () => {
+    if (window.location.hash !== '#catalogo-titulo') {
+        return;
+    }
+
+    document.getElementById('catalogo-titulo')?.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start',
+    });
+};
+
 onMounted(() => {
     const previo = page.props.catalogModal;
     if (previo === 'general' || previo === 'temporada') {
@@ -35,55 +49,92 @@ onMounted(() => {
         abierto.value = true;
     }
     window.addEventListener('keydown', onKey);
+
+    if (portadas.value) {
+        portadasObserver = new IntersectionObserver(
+            (entries) => {
+                if (entries.some((entry) => entry.isIntersecting)) {
+                    portadasVisibles.value = true;
+                    portadasObserver?.disconnect();
+                }
+            },
+            { threshold: 0.12 },
+        );
+        portadasObserver.observe(portadas.value);
+    }
+
+    if (window.location.hash === '#catalogo-titulo') {
+        const alinear = () => window.setTimeout(irAlAncla, 60);
+        if (document.readyState === 'complete') {
+            alinear();
+        } else {
+            window.addEventListener('load', alinear, { once: true });
+        }
+    }
 });
 
 onUnmounted(() => {
     window.removeEventListener('keydown', onKey);
+    portadasObserver?.disconnect();
 });
 </script>
 
 <template>
     <section
-        class="bg-brand-orange bg-cover bg-center bg-no-repeat py-16 text-white sm:py-20"
-        aria-labelledby="catalogo-titulo"
+        id="catalogo-titulo"
+        class="scroll-mt-40 bg-brand-orange bg-cover bg-center bg-no-repeat py-16 text-white sm:scroll-mt-36 sm:py-20"
+        aria-labelledby="catalogo-titulo-texto"
     >
         <div class="mx-auto max-w-5xl px-4 text-center sm:px-6 lg:px-8">
-            <h2 id="catalogo-titulo" class="mt-2 text-3xl font-extrabold drop-shadow-md sm:text-4xl">
+            <h2 id="catalogo-titulo-texto" class="mt-2 text-3xl font-extrabold drop-shadow-md sm:text-4xl">
                 Descarga el catálogo
             </h2>
             <p class="mt-2 text-sm font-extrabold">
                 Chécate nuestros productos, descarga nuestro catálogo y mantente actualizado.
             </p>
 
-            <div class="mt-8 grid grid-cols-1 items-start gap-10 md:grid-cols-2">
-                <article>
+            <div
+                ref="portadas"
+                class="mt-8 grid grid-cols-1 items-start gap-10 md:grid-cols-2"
+            >
+                <article
+                    class="catalog-cover"
+                    :class="{ 'catalog-cover-in': portadasVisibles }"
+                    style="--delay: 0ms; --tilt: 16deg"
+                >
                     <button
                         type="button"
                         style="cursor: pointer;"
-                        class="mx-auto flex max-w-[320px] rounded-[8px] transition hover:scale-[1.02] focus:outline-hidden focus-visible:ring-2 focus-visible:ring-white"
+                        class="relative mx-auto flex max-w-[320px] overflow-hidden rounded-[8px] transition duration-300 hover:-translate-y-1 hover:scale-[1.03] focus:outline-hidden focus-visible:ring-2 focus-visible:ring-white"
                         @click="abrir('general')"
                     >
                         <img
                             src="/img/productos/portada-catalogo-2026.webp"
                             alt="Catálogo Globos Sensacional 2026"
-                            class="h-auto w-full rounded-[8px] object-contain shadow-lg"
+                            class="catalog-cover-img h-auto w-full rounded-[8px] object-contain shadow-lg"
                         />
+                        <span class="catalog-shine" aria-hidden="true" />
                     </button>
                     <p class="mt-4 text-base font-extrabold">Catálogo general 2026</p>
                 </article>
 
-                <article>
+                <article
+                    class="catalog-cover"
+                    :class="{ 'catalog-cover-in': portadasVisibles }"
+                    style="--delay: 180ms; --tilt: -16deg"
+                >
                     <button
                         type="button"
                         style="cursor: pointer;"
-                        class="mx-auto flex max-w-[320px] rounded-[8px] transition hover:scale-[1.02] focus:outline-hidden focus-visible:ring-2 focus-visible:ring-white"
+                        class="relative mx-auto flex max-w-[320px] overflow-hidden rounded-[8px] transition duration-300 hover:-translate-y-1 hover:scale-[1.03] focus:outline-hidden focus-visible:ring-2 focus-visible:ring-white"
                         @click="abrir('temporada')"
                     >
                         <img
                             src="/img/productos/glossensacional-de-temporada2026.jpg"
                             alt="Catálogo de temporada Globos Sensacional 2026"
-                            class="h-auto w-full rounded-[8px] object-contain shadow-lg"
+                            class="catalog-cover-img h-auto w-full rounded-[8px] object-contain shadow-lg"
                         />
+                        <span class="catalog-shine" aria-hidden="true" />
                     </button>
                     <p class="mt-4 text-base font-extrabold">Catálogo de temporada</p>
                 </article>
@@ -168,3 +219,80 @@ onUnmounted(() => {
         </div>
     </section>
 </template>
+
+<style scoped>
+.catalog-cover {
+    opacity: 0;
+    transform: perspective(1100px) translateY(42px) rotateY(var(--tilt, 14deg)) scale(0.92);
+    transform-origin: center bottom;
+}
+
+.catalog-cover-in {
+    animation: catalog-in 0.9s cubic-bezier(0.22, 1, 0.36, 1) var(--delay, 0ms) both;
+}
+
+.catalog-cover-in .catalog-cover-img {
+    animation: catalog-float 5.2s ease-in-out calc(var(--delay, 0ms) + 900ms) infinite;
+}
+
+.catalog-shine {
+    pointer-events: none;
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        105deg,
+        transparent 35%,
+        rgb(255 255 255 / 0.45) 50%,
+        transparent 65%
+    );
+    transform: translateX(-130%) skewX(-16deg);
+}
+
+.catalog-cover-in .catalog-shine {
+    animation: catalog-shine 1.05s ease calc(var(--delay, 0ms) + 280ms) forwards;
+}
+
+@keyframes catalog-in {
+    from {
+        opacity: 0;
+        transform: perspective(1100px) translateY(42px) rotateY(var(--tilt, 14deg)) scale(0.92);
+    }
+
+    to {
+        opacity: 1;
+        transform: perspective(1100px) translateY(0) rotateY(0deg) scale(1);
+    }
+}
+
+@keyframes catalog-float {
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-8px);
+    }
+}
+
+@keyframes catalog-shine {
+    from {
+        transform: translateX(-130%) skewX(-16deg);
+    }
+
+    to {
+        transform: translateX(140%) skewX(-16deg);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .catalog-cover,
+    .catalog-cover-in,
+    .catalog-cover-in .catalog-cover-img,
+    .catalog-cover-in .catalog-shine {
+        opacity: 1;
+        transform: none;
+        animation: none;
+    }
+}
+</style>

@@ -24,8 +24,8 @@ const ogImage = computed(() => `${appUrl.value}/img/productos/globossensacional-
             <link rel="canonical" :href="canonical" />
             <meta property="og:type" content="website" />
             <meta property="og:locale" content="es_MX" />
-            <meta property="og:site_name" content="Globos Sensacionales" />
-            <meta property="og:title" content="Inspírate | Globos Sensacionales" />
+            <meta property="og:site_name" content="Globos Sensacional" />
+            <meta property="og:title" content="Inspírate | Globos Sensacional" />
             <meta property="og:description" :content="description" />
             <meta property="og:url" :href="canonical" />
             <meta property="og:image" :content="ogImage" />

@@ -44,8 +44,8 @@ const ogImage = computed(() => `${appUrl.value}/img/logo/globos-fiesta.webp`);
             <link rel="canonical" :href="canonical" />
             <meta property="og:type" content="website" />
             <meta property="og:locale" content="es_MX" />
-            <meta property="og:site_name" content="Globos Sensacionales" />
-            <meta property="og:title" content="Encuentra un distribuidor | Globos Sensacionales" />
+            <meta property="og:site_name" content="Globos Sensacional" />
+            <meta property="og:title" content="Encuentra un distribuidor | Globos Sensacional" />
             <meta property="og:description" :content="description" />
             <meta property="og:url" :href="canonical" />
             <meta property="og:image" :content="ogImage" />

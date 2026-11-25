@@ -1,11 +1,11 @@
 <script setup>
 import { usePage } from '@inertiajs/vue3';
-import { computed, nextTick, onMounted, onUnmounted, ref, watch } from 'vue';
+import { nextTick, onMounted, onUnmounted, ref, watch } from 'vue';
 
 const page = usePage();
-const catalogUrl = computed(
-    () => page.props.brand?.catalogViewUrl ?? '/catalogo/2026/Catalogo-Sensacional-2026.php',
-);
+
+const catalogo = (coleccion) =>
+    `/catalogo/2026/Catalogo-Sensacional-2026.php?coleccion=${coleccion}`;
 
 const colors = [
     {
@@ -15,6 +15,7 @@ const colors = [
         alt: 'Ramo de globos de látex en colores estándar Sensacional',
         color: 'bg-brand-red',
         textClass: 'text-white',
+        catalog: catalogo('estandar'),
     },
     {
         name: 'Colores Perla y Metálicos',
@@ -23,6 +24,7 @@ const colors = [
         alt: 'Globos de látex perla y metálicos Sensacional',
         color: 'bg-brand-orange',
         textClass: 'text-white',
+        catalog: catalogo('metalico-perla'),
     },
     {
         name: 'Colores Cristal y Neón',
@@ -31,6 +33,7 @@ const colors = [
         alt: 'Globos de látex cristal y neón Sensacional',
         color: 'bg-brand-yellow',
         textClass: 'text-white',
+        catalog: catalogo('neon-cristal'),
     },
     {
         name: 'Colores Vintage y fashion',
@@ -39,6 +42,7 @@ const colors = [
         alt: 'Globos de látex vintage y fashion Sensacional',
         color: 'bg-brand-green',
         textClass: 'text-white',
+        catalog: catalogo('vintage-fashion'),
     },
 ];
 
@@ -167,12 +171,12 @@ watch(
                         <h3 class="text-2xl font-extrabold">{{ line.name }}</h3>
                         <p class="mt-3 text-sm font-medium opacity-90">{{ line.text }}</p>
                         <a
-                            :href="catalogUrl"
+                            :href="line.catalog"
                             target="_blank"
                             rel="noopener noreferrer"
                             class="mt-5 inline-flex items-center rounded-full bg-white/20 px-5 py-2.5 text-xs font-bold uppercase tracking-wide ring-1 ring-white/50 transition hover:bg-white hover:text-gray-900"
                         >
-                            Ver catálogo
+                            Ver colores
                         </a>
                     </div>
                 </article>
@@ -215,14 +219,24 @@ watch(
                         </div>
                     </div>
 
-                    <a
-                        :href="catalogUrl"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        class="mt-8 inline-flex w-fit items-center rounded-full bg-brand-red px-6 py-3 text-sm font-bold uppercase tracking-wide text-white transition hover:bg-brand-orange"
-                    >
-                        Ver catálogo
-                    </a>
+                    <div class="mt-8 flex flex-wrap gap-3">
+                        <a
+                            :href="catalogo('lanzamientos')"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="inline-flex w-fit items-center rounded-full bg-brand-red px-6 py-3 text-sm font-bold uppercase tracking-wide text-white transition hover:bg-brand-orange"
+                        >
+                            Ver lanzamientos
+                        </a>
+                        <a
+                            :href="catalogo('para-toda-ocasion')"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="inline-flex w-fit items-center rounded-full bg-brand-purple px-6 py-3 text-sm font-bold uppercase tracking-wide text-white transition hover:bg-brand-orange"
+                        >
+                            Ver ocasiones
+                        </a>
+                    </div>
                 </div>
             </article>
 
@@ -256,12 +270,12 @@ watch(
                         </button>
                     </div>
                     <a
-                        :href="catalogUrl"
+                        :href="catalogo('surtido-mezclado')"
                         target="_blank"
                         rel="noopener noreferrer"
                         class="mt-8 inline-flex w-fit items-center rounded-full bg-brand-red px-6 py-3 text-sm font-bold uppercase tracking-wide text-white transition hover:bg-brand-orange"
                     >
-                        Ver catálogo
+                        Ver colores
                     </a>
                 </div>
                 <div class="order-1 flex items-center justify-center bg-brand-orange/10 p-6 sm:p-8 lg:order-2">

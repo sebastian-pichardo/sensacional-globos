@@ -11,7 +11,7 @@ const page = usePage();
 const shipping = computed(() => page.props.brand?.shipping ?? 'Envíos a todo México');
 const description = computed(
     () =>
-        `${props.title} | Globos Sensacionales. Fabricación de globos de látex para distribuidores. Envíos a todo México.`,
+        `${props.title} | Globos Sensacional. Fabricación de globos de látex para distribuidores. Envíos a todo México.`,
 );
 </script>
 
@@ -19,7 +19,7 @@ const description = computed(
     <PublicLayout>
         <Head :title="props.title">
             <meta name="description" :content="description" />
-            <meta property="og:title" :content="props.title + ' | Globos Sensacionales'" />
+            <meta property="og:title" :content="props.title + ' | Globos Sensacional'" />
             <meta property="og:description" :content="description" />
         </Head>
 

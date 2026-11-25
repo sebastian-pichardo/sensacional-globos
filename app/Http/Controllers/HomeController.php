@@ -25,7 +25,7 @@ class HomeController extends Controller
                     'name' => '',
                     'sku' => '',
                     'description' => '',
-                    'alt' => 'Globos Sensacionales — colección 1',
+                    'alt' => 'Globos Sensacional — colección 2026',
                     'href' => null,
                 ],
             ];

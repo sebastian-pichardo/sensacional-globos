@@ -1,7 +1,7 @@
 <x-mail::message>
 # Nuevo mensaje de contacto
 
-Recibiste un mensaje desde el formulario de Globos Sensacionales.
+Recibiste un mensaje desde el formulario de Globos Sensacional.
 
 **Nombre:** {{ $contactMessage->name }}
 **Correo electrónico:** {{ $contactMessage->email }}

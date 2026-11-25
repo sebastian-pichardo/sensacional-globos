@@ -15,8 +15,8 @@ const images = [
         alt: 'Fotografía de producto de globos Sensacional 2',
     },
     {
-        src: '/img/productos/galeria3.webp',
-        alt: 'Fotografía de producto de globos Sensacional 3',
+        src: '/img/productos/galeria00.webp',
+        alt: 'globos Sensacional productos en stock',
     },
     {
         src: '/img/productos/galeria4.webp',

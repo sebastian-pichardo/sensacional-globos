@@ -19,8 +19,8 @@ const canonical = computed(() => `${appUrl.value}/aviso-de-privacidad`);
             <link rel="canonical" :href="canonical" />
             <meta property="og:type" content="website" />
             <meta property="og:locale" content="es_MX" />
-            <meta property="og:site_name" content="Globos Sensacionales" />
-            <meta property="og:title" content="Aviso de Privacidad | Globos Sensacionales" />
+            <meta property="og:site_name" content="Globos Sensacional" />
+            <meta property="og:title" content="Aviso de Privacidad | Globos Sensacional" />
             <meta property="og:description" :content="description" />
             <meta property="og:url" :href="canonical" />
         </Head>

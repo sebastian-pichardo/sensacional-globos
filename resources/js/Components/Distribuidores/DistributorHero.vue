@@ -33,7 +33,7 @@
                 <div class="mx-auto mt-10 w-full max-w-[400px] overflow-hidden rounded-3xl shadow-xl ring-4 ring-white/80">
                     <img
                         src="/img/productos/globos-sensacional-distribuidores.png"
-                        alt="Encuentar unn distribuidor de Globos Sensacionales"
+                        alt="Encuentar unn distribuidor de Globos Sensacional"
                         class="aspect-square h-auto w-full object-cover object-center"
                         width="400"
                         height="400"
